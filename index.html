@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Protocolo Ar Gelado™ — Limpeza de Split em 20 Minutos</title>
+  <meta name="description" content="Aprenda o método caseiro de 20 minutos para limpar seu ar-condicionado Split sem risco de molhar a placa e economize R$ 250 por aparelho." />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            ice: {
+              50: '#F0F9FF',
+              100: '#E0F2FE',
+              500: '#0EA5E9',
+              600: '#0284C7',
+              700: '#0369A1',
+              900: '#0C4A6E',
+            },
+            navy: {
+              900: '#0B132B',
+              800: '#16213E',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- CONFIGURAÇÃO CENTRAL DA OFERTA (EDITE AQUI SEUS LINKS E PIXEL) -->
+  <script>
+    const OFFER_CONFIG = {
+      checkoutUrlMain: "https://pay.cakto.com.br/SEU-LINK-37", // Link Checkout R$ 37,00
+      checkoutUrlDiscount: "https://pay.cakto.com.br/SEU-LINK-27", // Link Checkout R$ 27,00 (Exit Popup)
+      metaPixelId: "SEU_PIXEL_ID_AQUI" // Ex: "1428548336100912"
+    };
+
+    // Inicialização limpa do Meta Pixel (Apenas PageView automático)
+    if (OFFER_CONFIG.metaPixelId && OFFER_CONFIG.metaPixelId !== "SEU_PIXEL_ID_AQUI") {
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', OFFER_CONFIG.metaPixelId);
+      fbq('track', 'PageView');
+    }
+  </script>
+
+  <style>
+    @keyframes pulse-cta {
+      0%, 100% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.45); }
+      50% { transform: scale(1.02); box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.65); }
+    }
+    .btn-pulse {
+      animation: pulse-cta 2.4s infinite ease-in-out;
+    }
+    .bg-grid-pattern {
+      background-image: radial-gradient(rgba(14, 165, 233, 0.14) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    /* Custom Range Slider for Calculator & Comparison */
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      background: #0284C7;
+      border: 3px solid #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-ice-500 selection:text-white pb-20 md:pb-0">
+
+  <!-- TOP URGENCY BAR -->
+  <div class="bg-navy-900 text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium tracking-wide border-b border-ice-900">
+    <span class="inline-flex items-center gap-1.5">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+      <span><strong class="text-ice-400">ATENÇÃO DONOS DE AR-CONDICIONADO SPLIT:</strong> Não pague R$ 250+ para técnico neste verão</span>
+    </span>
+  </div>
+
+  <!-- HERO SECTION -->
+  <header class="relative overflow-hidden bg-gradient-to-b from-ice-50 via-white to-slate-50 bg-grid-pattern pt-8 pb-14 sm:pt-12 sm:pb-20 border-b border-slate-200/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      
+      <!-- Pill Badge -->
+      <div class="inline-flex items-center gap-2 bg-white border border-ice-200 shadow-sm rounded-full px-3.5 py-1.5 mb-5">
+        <svg class="w-4 h-4 text-ice-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+        </svg>
+        <span class="text-xs font-bold uppercase tracking-wider text-ice-900">Método Blindagem Seca™ • Zero Risco Elétrico</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-navy-900 leading-[1.15] tracking-tight mb-5">
+        Deixe Seu Ar-Condicionado <span class="text-ice-600 underline decoration-ice-200 decoration-4 underline-offset-4">Gelando Como Novo</span> em 20 Minutos — Sem Chamar Técnico
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
+        Use apenas um <strong>borrifador, pincel e saco de lixo</strong> para remover o lodo oculto da turbina, eliminar o cheiro de mofo e baixar sua conta de luz — <strong>sem tirar o aparelho da parede e sem risco de molhar a placa.</strong>
+      </p>
+
+      <!-- INTERACTIVE BEFORE / AFTER VISUAL COMPARATOR -->
+      <div class="max-w-2xl mx-auto mb-8 bg-white rounded-2xl shadow-xl border border-slate-200/90 p-3 sm:p-4">
+        <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider px-2 pb-2.5 text-slate-500">
+          <span class="text-red-600 flex items-center gap-1">● Antes (Sujeira Oculta)</span>
+          <span class="text-slate-400">Arraste para comparar ↔</span>
+          <span class="text-emerald-600 flex items-center gap-1">● Depois (20 Minutos)</span>
+        </div>
+
+        <div id="compare-container" class="relative w-full h-56 sm:h-64 rounded-xl overflow-hidden select-none cursor-ew-resize border border-slate-200">
+          
+          <!-- AFTER STATE (CLEAN - BACKGROUND LAYER) -->
+          <div class="absolute inset-0 bg-gradient-to-br from-sky-500 via-ice-600 to-navy-900 flex flex-col items-center justify-center p-6 text-white">
+            <div class="bg-white/15 backdrop-blur-sm border border-white/25 rounded-full px-3 py-1 text-xs font-bold mb-2">
+              ✅ PROTOCOLO AR GELADO™ APLICADO
+            </div>
+            <svg class="w-16 h-16 text-ice-100 mb-2" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m0-18l-3 3m3-3l3 3m-3 15l-3-3m3 3l3-3M3 12h18M3 12l3-3m-3 3l3 3m15-3l-3-3m3 3l-3 3"/>
+            </svg>
+            <h3 class="font-display text-xl sm:text-2xl font-extrabold">Vento Forte + Ar Puro</h3>
+            <p class="text-xs sm:text-sm text-ice-100 mt-1 max-w-xs">Turbina 100% livre de fungos • Gela o quarto 2x mais rápido • Economia de até 30% na luz</p>
+            <span class="mt-3 bg-emerald-500 text-white text-xs font-extrabold px-3 py-1 rounded-md shadow">
+              CUSTO: APENAS R$ 37,00 (VOCÊ MESMO FAZ)
+            </span>
+          </div>
+
+          <!-- BEFORE STATE (DIRTY - CLIPPED FOREGROUND LAYER) -->
+          <div id="before-layer" class="absolute inset-0 bg-gradient-to-br from-stone-800 via-neutral-900 to-zinc-950 flex flex-col items-center justify-center p-6 text-white" style="clip-path: inset(0 50% 0 0);">
+            <div class="bg-red-500/20 border border-red-500/40 text-red-300 rounded-full px-3 py-1 text-xs font-bold mb-2">
+              ⚠️ O QUE ESTÁ DENTRO DO SEU SPLIT HOJE
+            </div>
+            <svg class="w-16 h-16 text-amber-500/80 mb-2" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/>
+            </svg>
+            <h3 class="font-display text-xl sm:text-2xl font-extrabold text-amber-200">Crosta de Lodo e Mofo</h3>
+            <p class="text-xs sm:text-sm text-stone-300 mt-1 max-w-xs">Bloqueia a passagem do ar • Pinga água na parede • Faz o compressor trabalhar dobrado</p>
+            <span class="mt-3 bg-red-600 text-white text-xs font-extrabold px-3 py-1 rounded-md shadow">
+              TÉCNICO COBRA: R$ 250,00 POR LIMPEZA
+            </span>
+          </div>
+
+          <!-- SLIDER HANDLE -->
+          <div id="slider-bar" class="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_12px_rgba(0,0,0,0.6)] pointer-events-none" style="left: 50%;">
+            <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 bg-white text-navy-900 rounded-full shadow-lg flex items-center justify-center font-bold text-sm border-2 border-ice-500">
+              ⇄
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRIMARY HERO CTA -->
+      <div class="max-w-md mx-auto">
+        <a href="#oferta" class="btn-pulse block w-full bg-emerald-600 hover:bg-emerald-500 text-white font-display font-extrabold text-base sm:text-lg py-4 px-6 rounded-xl transition-all shadow-lg">
+          QUERO LIMPAR MEU AR AGORA — R$ 37
+        </a>
+        <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mt-3 text-xs text-slate-500 font-medium">
+          <span class="flex items-center gap-1">⚡ Acesso imediato no celular</span>
+          <span class="flex items-center gap-1">❄️ Qualquer marca de Split</span>
+          <span class="flex items-center gap-1">🛡️ Garantia de 7 dias</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- SECTION 1: SYMPTOMS & THE GAS MYTH -->
+  <section class="py-14 sm:py-20 bg-white border-b border-slate-200/70">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-ice-600">Diagnóstico Rápido</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-navy-900 mt-1">
+          Seu ar-condicionado está dando algum destes 4 sinais?
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4 mb-10">
+        <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-5 flex items-start gap-3.5">
+          <div class="w-9 h-9 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold shrink-0 mt-0.5">1</div>
+          <div>
+            <h3 class="font-bold text-navy-900 text-base">No 16°C mas não gela o quarto</h3>
+            <p class="text-sm text-slate-600 mt-1">O vento sai fraco, sem pressão, e você precisa ligar um ventilador junto para conseguir dormir.</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-5 flex items-start gap-3.5">
+          <div class="w-9 h-9 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold shrink-0 mt-0.5">2</div>
+          <div>
+            <h3 class="font-bold text-navy-900 text-base">Cheiro de mofo ou "cachorro molhado"</h3>
+            <p class="text-sm text-slate-600 mt-1">Nos primeiros minutos após ligar, o aparelho joga um odor azedo e bactérias direto no seu nariz.</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-5 flex items-start gap-3.5">
+          <div class="w-9 h-9 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold shrink-0 mt-0.5">3</div>
+          <div>
+            <h3 class="font-bold text-navy-900 text-base">Pinga-pinga escorrendo na parede</h3>
+            <p class="text-sm text-slate-600 mt-1">A bandeja interna entope com uma gosma gelatinosa de poeira e começa a vazar água dentro de casa.</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-5 flex items-start gap-3.5">
+          <div class="w-9 h-9 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold shrink-0 mt-0.5">4</div>
+          <div>
+            <h3 class="font-bold text-navy-900 text-base">Conta de luz disparando no verão</h3>
+            <p class="text-sm text-slate-600 mt-1">Sufocado pela sujeira, o motor externo nunca desarma e consome até 35% mais energia elétrica.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Truth Callout Box -->
+      <div class="bg-amber-50 border-l-4 border-amber-500 rounded-r-xl p-6 shadow-sm">
+        <h3 class="font-display font-extrabold text-lg text-amber-950 mb-2">
+          🚨 A verdade que ninguém te conta: o problema NÃO é falta de gás!
+        </h3>
+        <p class="text-sm sm:text-base text-amber-900/90 leading-relaxed">
+          Quando o ar para de gelar, a desculpa clássica de muitos técnicos é dizer que <em>"precisa completar o gás"</em> para cobrar <strong>R$ 350 ou R$ 400</strong> na visita. Mas o gás trabalha em circuito selado — ele não evapora sozinho. Em 90% dos casos, o único vilão é a <strong>crosta de lodo grudada no rolo da turbina interna</strong>, um lugar que lavar apenas as telinhas (filtros) nunca limpa.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: THE MECHANISM (MÉTODO BLINDAGEM SECA) -->
+  <section class="py-14 sm:py-20 bg-slate-50 border-b border-slate-200/70">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-ice-600">Segurança Total</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-navy-900 mt-1">
+          Como Funciona o Método Blindagem Seca™
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2">
+          Esqueça máquinas de pressão caras ou bolsas coletoras de R$ 180. Desenvolvemos um passo a passo seguro com itens que você já tem na cozinha:
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Step 1 -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/90 relative">
+          <span class="inline-block bg-ice-100 text-ice-700 font-display font-extrabold text-xs px-3 py-1 rounded-full mb-4">
+            PASSO 1 • 2 MINUTOS
+          </span>
+          <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Blindagem da Placa</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Mostramos com fotos exatas onde fica a caixa eletrônica de cada marca e como vedá-la com plástico e fita crepe. <strong>Zero chance de respingo ou curto.</strong>
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/90 relative">
+          <span class="inline-block bg-ice-100 text-ice-700 font-display font-extrabold text-xs px-3 py-1 rounded-full mb-4">
+            PASSO 2 • 3 MINUTOS
+          </span>
+          <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Calha com Saco de 100L</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Você prende um saco de lixo reforçado comum formando um funil direto para um balde. <strong>Não molha sua parede, nem a cama, nem o piso.</strong>
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/90 relative">
+          <span class="inline-block bg-ice-100 text-ice-700 font-display font-extrabold text-xs px-3 py-1 rounded-full mb-4">
+            PASSO 3 • 15 MINUTOS
+          </span>
+          <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Banho na Turbina & Dreno</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Com um borrifador e um pincel macio, você dissolve o lodo da turbina e desentope o dreno em 60 segundos. <strong>A água preta sai toda no balde.</strong>
+          </p>
+        </div>
+      </div>
+
+      <!-- Compatibility Brands Bar -->
+      <div class="mt-10 bg-white border border-slate-200 rounded-xl p-5 text-center">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">
+          100% Compatível com Modelos Convencionais e Inverter (9.000 a 30.000 BTUs):
+        </p>
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3">
+          <span class="px-3 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-md">LG Dual Inverter</span>
+          <span class="px-3 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-md">Samsung WindFree</span>
+          <span class="px-3 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-md">Midea / Springer</span>
+          <span class="px-3 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-md">Consul</span>
+          <span class="px-3 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-md">Gree</span>
+          <span class="px-3 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-md">Electrolux</span>
+          <span class="px-3 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-md">Elgin / Agratto</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: INTERACTIVE SAVINGS CALCULATOR -->
+  <section class="py-14 sm:py-20 bg-white border-b border-slate-200/70">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="bg-navy-900 text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-ice-900">
+        <div class="text-center mb-8">
+          <span class="text-xs font-bold uppercase tracking-widest text-ice-400">Faça a Conta Agora</span>
+          <h2 class="font-display text-2xl sm:text-3xl font-extrabold mt-1">
+            Quanto Você Vai Economizar Esse Ano?
+          </h2>
+          <p class="text-sm text-slate-300 mt-1">Arraste a barra abaixo conforme a quantidade de aparelhos na sua casa:</p>
+        </div>
+
+        <!-- Slider Control -->
+        <div class="mb-8 bg-navy-800/80 p-5 rounded-2xl border border-white/10">
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-sm font-semibold text-slate-200">Aparelhos Split em casa:</span>
+            <span id="ac-count-label" class="font-display text-2xl font-extrabold text-ice-400">2 aparelhos</span>
+          </div>
+          <input id="ac-slider" type="range" min="1" max="5" value="2" class="w-full h-2.5 bg-slate-700 rounded-lg appearance-none cursor-pointer">
+          <div class="flex justify-between text-xs text-slate-400 mt-2 font-medium">
+            <span>1 Split</span>
+            <span>2 Splits</span>
+            <span>3 Splits</span>
+            <span>4 Splits</span>
+            <span>5+ Splits</span>
+          </div>
+        </div>
+
+        <!-- Calculated Results Grid -->
+        <div class="grid sm:grid-cols-3 gap-4 text-center mb-6">
+          <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+            <span class="text-xs text-slate-400 block">Gasto com Técnico (2x/ano)</span>
+            <span id="tech-cost" class="font-display text-xl font-extrabold text-red-400 line-through mt-1 block">R$ 1.000</span>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+            <span class="text-xs text-slate-400 block">Economia na Conta de Luz</span>
+            <span id="energy-save" class="font-display text-xl font-extrabold text-ice-300 mt-1 block">+ R$ 640/ano</span>
+          </div>
+          <div class="bg-emerald-500/20 border border-emerald-400/40 rounded-xl p-4">
+            <span class="text-xs text-emerald-200 font-semibold block">Sua Economia Total</span>
+            <span id="total-save" class="font-display text-2xl font-extrabold text-emerald-400 mt-1 block">R$ 1.603</span>
+          </div>
+        </div>
+
+        <p class="text-center text-xs text-slate-400">
+          *Baseado na média nacional de R$ 250 por higienização técnica semestral + redução média de 22% no consumo após limpeza da turbina.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: DELIVERABLES & PRICING BOX -->
+  <section id="oferta" class="py-16 sm:py-24 bg-gradient-to-b from-slate-50 to-ice-50/60">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      
+      <div class="bg-white rounded-3xl shadow-2xl border-2 border-ice-500 overflow-hidden">
+        <!-- Card Header -->
+        <div class="bg-navy-900 text-white text-center py-6 px-6">
+          <span class="inline-block bg-emerald-500 text-navy-950 font-extrabold text-xs uppercase tracking-wider px-3 py-1 rounded-full mb-2">
+            Acesso Imediato + Vitalício
+          </span>
+          <h2 class="font-display text-2xl sm:text-3xl font-extrabold">
+            Protocolo Ar Gelado™ Completo
+          </h2>
+          <p class="text-sm text-slate-300 mt-1">Tudo o que você precisa para limpar todos os aparelhos da sua casa hoje</p>
+        </div>
+
+        <!-- Deliverables List -->
+        <div class="p-6 sm:p-10">
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">✓</span>
+              <div>
+                <strong class="text-navy-900">Guia Visual Passo a Passo — Método Blindagem Seca™:</strong>
+                <span class="text-slate-600 text-sm block">Instruções ilustradas para abrir, isolar, lavar a turbina e fechar seu Split em 20 minutos sem ferramentas caras.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">✓</span>
+              <div>
+                <strong class="text-navy-900">Mapa de Placas Eletrônicas por Marca:</strong>
+                <span class="text-slate-600 text-sm block">Localização exata da caixa elétrica nos modelos LG, Samsung, Midea, Consul, Gree, Electrolux e Elgin.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">✓</span>
+              <div>
+                <strong class="text-navy-900">Guia Anti-Pinga (Desentupimento de Dreno em 60s):</strong>
+                <span class="text-slate-600 text-sm block">Como acabar definitivamente com o vazamento de água na parede sem chamar técnico.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3 bg-ice-50/80 p-3.5 rounded-xl border border-ice-200/70">
+              <span class="w-6 h-6 rounded-full bg-ice-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">🎁</span>
+              <div>
+                <strong class="text-ice-900">BÔNUS 1 — Receita da Solução Desengordurante Caseira:</strong>
+                <span class="text-slate-600 text-sm block">Fórmula de centavos que elimina fungos e ácaros sem corroer o alumínio da serpentina.</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-3 bg-ice-50/80 p-3.5 rounded-xl border border-ice-200/70">
+              <span class="w-6 h-6 rounded-full bg-ice-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">🎁</span>
+              <div>
+                <strong class="text-ice-900">BÔNUS 2 — Checklist de Economia no Controle Remoto:</strong>
+                <span class="text-slate-600 text-sm block">Os 4 ajustes exatos de temperatura e modo que cortam até 30% do gasto de energia no verão.</span>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Price Anchor -->
+          <div class="text-center bg-slate-50 rounded-2xl p-6 border border-slate-200 mb-6">
+            <p class="text-sm text-slate-500 font-medium">
+              Valor normal: <span class="line-through text-red-500 font-bold">R$ 97,00</span>
+            </p>
+            <div class="my-2">
+              <span class="text-sm font-bold text-slate-600 block">Por apenas:</span>
+              <span class="font-display text-5xl sm:text-6xl font-extrabold text-navy-900 tracking-tight">
+                R$ 37<span class="text-2xl sm:text-3xl">,00</span>
+              </span>
+              <span class="block text-xs font-semibold text-emerald-700 mt-1">
+                Pagamento único • Sem mensalidades • Use quantas vezes quiser
+              </span>
+            </div>
+
+            <!-- Main Checkout Button -->
+            <button onclick="goToCheckout('main')" class="btn-pulse w-full mt-4 bg-emerald-600 hover:bg-emerald-500 text-white font-display font-extrabold text-lg sm:text-xl py-4 px-6 rounded-xl transition-all shadow-xl cursor-pointer">
+              LIBERAR MEU ACESSO AGORA →
+            </button>
+
+            <div class="flex items-center justify-center gap-4 mt-4 text-xs text-slate-500">
+              <span>🔒 Compra 100% Segura</span>
+              <span>⚡ Envio no WhatsApp e E-mail</span>
+              <span>💳 Pix ou Cartão</span>
+            </div>
+          </div>
+
+          <!-- 7-Day Guarantee -->
+          <div class="flex flex-col sm:flex-row items-center gap-4 bg-emerald-50/70 border border-emerald-200 rounded-2xl p-5 text-center sm:text-left">
+            <div class="w-14 h-14 rounded-full bg-emerald-600 text-white font-display font-extrabold text-xl flex items-center justify-center shrink-0 shadow">
+              7D
+            </div>
+            <div>
+              <h4 class="font-display font-bold text-navy-900 text-base">Risco Zero: Garantia Incondicional de 7 Dias</h4>
+              <p class="text-xs sm:text-sm text-slate-600 mt-0.5 leading-relaxed">
+                Acesse o guia hoje mesmo. Se você achar difícil, inseguro ou não ficar 100% satisfeito por qualquer motivo, devolvemos cada centavo dos seus R$ 37 sem burocracia.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: FAQ ACCORDION -->
+  <section class="py-14 bg-white border-t border-slate-200/80">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-navy-900 text-center mb-8">
+        Dúvidas Frequentes
+      </h2>
+
+      <div class="space-y-3" id="faq-list">
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <button class="faq-btn w-full flex justify-between items-center p-4 sm:p-5 text-left font-bold text-navy-900 bg-slate-50 hover:bg-slate-100 transition">
+            <span>Preciso tirar o ar-condicionado da parede?</span>
+            <span class="faq-icon text-ice-600 font-extrabold text-xl">+</span>
+          </button>
+          <div class="faq-content hidden p-4 sm:p-5 text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
+            Não! Todo o procedimento é feito com o aparelho instalado na parede, sem mexer na tubulação de cobre nem no gás.
+          </div>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <button class="faq-btn w-full flex justify-between items-center p-4 sm:p-5 text-left font-bold text-navy-900 bg-slate-50 hover:bg-slate-100 transition">
+            <span>Tem algum risco de queimar a placa eletrônica?</span>
+            <span class="faq-icon text-ice-600 font-extrabold text-xl">+</span>
+          </button>
+          <div class="faq-content hidden p-4 sm:p-5 text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
+            Nenhum. O primeiro passo do protocolo é desligar o disjuntor e aplicar a Blindagem Seca™ (isolamento completo do módulo eletrônico com plástico e fita crepe) antes de usar qualquer gota de água.
+          </div>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <button class="faq-btn w-full flex justify-between items-center p-4 sm:p-5 text-left font-bold text-navy-900 bg-slate-50 hover:bg-slate-100 transition">
+            <span>Como recebo o acesso após o pagamento?</span>
+            <span class="faq-icon text-ice-600 font-extrabold text-xl">+</span>
+          </button>
+          <div class="faq-content hidden p-4 sm:p-5 text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
+            Assim que o pagamento é confirmado (na hora no Pix ou Cartão), você recebe o link de acesso imediato no seu WhatsApp e no seu e-mail para abrir direto no celular.
+          </div>
+        </div>
+
+        <div class="border border-slate-200 rounded-xl overflow-hidden">
+          <button class="faq-btn w-full flex justify-between items-center p-4 sm:p-5 text-left font-bold text-navy-900 bg-slate-50 hover:bg-slate-100 transition">
+            <span>Perde a garantia de fábrica do aparelho?</span>
+            <span class="faq-icon text-ice-600 font-extrabold text-xl">+</span>
+          </button>
+          <div class="faq-content hidden p-4 sm:p-5 text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
+            Não. Você não corta fios, não rompe lacres técnicos e não altera nenhuma peça interna — realiza apenas a higienização preventiva da turbina e serpentina.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-900 text-slate-400 py-8 text-center text-xs px-4">
+    <p class="font-semibold text-slate-300">Protocolo Ar Gelado™ — Todos os direitos reservados.</p>
+    <p class="mt-2 max-w-xl mx-auto text-slate-500">
+      Este site não tem vínculo com o Facebook ou Meta Platforms, Inc. Siga sempre as instruções de desligamento do disjuntor indicadas no guia antes de iniciar a limpeza.
+    </p>
+  </footer>
+
+  <!-- STICKY MOBILE CTA BAR -->
+  <div id="sticky-bar" class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] z-40 transform translate-y-full transition-transform duration-300 md:hidden">
+    <div class="flex items-center justify-between gap-3 max-w-lg mx-auto">
+      <div>
+        <span class="text-[11px] text-slate-500 line-through block leading-none">De R$ 97,00</span>
+        <span class="font-display font-extrabold text-lg text-navy-900">R$ 37,00</span>
+      </div>
+      <a href="#oferta" class="flex-1 text-center bg-emerald-600 text-white font-display font-extrabold text-sm py-3 px-4 rounded-xl shadow">
+        LIMPAR MEU AR AGORA
+      </a>
+    </div>
+  </div>
+
+  <!-- EXIT INTENT POPUP (R$ 27,00 DISCOUNT) -->
+  <div id="exit-modal" class="fixed inset-0 bg-navy-900/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center relative shadow-2xl border-2 border-emerald-500 animate-[fadeIn_0.25s_ease-out]">
+      <button onclick="closeExitModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:text-slate-800 font-bold">
+        ✕
+      </button>
+
+      <span class="inline-block bg-red-100 text-red-700 font-extrabold text-xs uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+        🎁 Espere! Desconto Liberado
+      </span>
+
+      <h3 class="font-display text-2xl font-extrabold text-navy-900 leading-tight">
+        Não Pague R$ 250 Para o Técnico Por Causa de R$ 10...
+      </h3>
+
+      <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+        Como você ainda está na página, liberei um <strong>cupom imediato de R$ 10 OFF</strong> para você testar o Protocolo Ar Gelado™ hoje mesmo sem desculpas.
+      </p>
+
+      <div class="my-5 bg-emerald-50 border border-emerald-200 rounded-2xl p-4">
+        <span class="text-xs text-slate-500 line-through">De R$ 37,00</span>
+        <div class="font-display text-4xl font-extrabold text-emerald-700">
+          R$ 27,00
+        </div>
+        <span class="text-xs font-semibold text-emerald-800">Acesso completo + Todos os Bônus + Garantia de 7 dias</span>
+      </div>
+
+      <button onclick="goToCheckout('discount')" class="btn-pulse w-full bg-emerald-600 hover:bg-emerald-500 text-white font-display font-extrabold text-base py-4 px-5 rounded-xl shadow-lg cursor-pointer">
+        APROVEITAR DESCONTO POR R$ 27 →
+      </button>
+
+      <button onclick="closeExitModal()" class="mt-3 text-xs text-slate-400 hover:text-slate-600 underline block mx-auto">
+        Não obrigado, prefiro pagar R$ 250 para um técnico
+      </button>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE SCRIPTS -->
+  <script>
+    // 1. Checkout Redirect with Clean Single InitiateCheckout Event
+    function goToCheckout(type) {
+      const targetUrl = type === 'discount'
+        ? OFFER_CONFIG.checkoutUrlDiscount
+        : OFFER_CONFIG.checkoutUrlMain;
+
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', {
+          value: type === 'discount' ? 27.00 : 37.00,
+          currency: 'BRL'
+        });
+      }
+
+      // Preserva parâmetros UTM da URL atual ao enviar para a Cakto
+      const currentParams = window.location.search;
+      const separator = targetUrl.includes('?') ? '&' : '?';
+      const finalUrl = currentParams ? targetUrl + separator + currentParams.substring(1) : targetUrl;
+
+      window.location.href = finalUrl;
+    }
+
+    // 2. Interactive Before/After Slider
+    const compareContainer = document.getElementById('compare-container');
+    const beforeLayer = document.getElementById('before-layer');
+    const sliderBar = document.getElementById('slider-bar');
+    let isDragging = false;
+
+    function updateSlider(clientX) {
+      const rect = compareContainer.getBoundingClientRect();
+      let pos = ((clientX - rect.left) / rect.width) * 100;
+      pos = Math.max(5, Math.min(95, pos));
+      beforeLayer.style.clipPath = `inset(0 ${100 - pos}% 0 0)`;
+      sliderBar.style.left = `${pos}%`;
+    }
+
+    compareContainer.addEventListener('mousedown', (e) => { isDragging = true; updateSlider(e.clientX); });
+    window.addEventListener('mouseup', () => { isDragging = false; });
+    window.addEventListener('mousemove', (e) => { if (isDragging) updateSlider(e.clientX); });
+
+    compareContainer.addEventListener('touchstart', (e) => { isDragging = true; updateSlider(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend', () => { isDragging = false; });
+    window.addEventListener('touchmove', (e) => { if (isDragging) updateSlider(e.touches[0].clientX); }, { passive: true });
+
+    // 3. Dynamic Savings Calculator
+    const acSlider = document.getElementById('ac-slider');
+    const acCountLabel = document.getElementById('ac-count-label');
+    const techCostEl = document.getElementById('tech-cost');
+    const energySaveEl = document.getElementById('energy-save');
+    const totalSaveEl = document.getElementById('total-save');
+
+    acSlider.addEventListener('input', function() {
+      const count = parseInt(this.value, 10);
+      acCountLabel.textContent = count === 1 ? '1 aparelho' : `${count} aparelhos`;
+
+      const annualTechCost = count * 500; // 2 limpezas de R$ 250/ano por aparelho
+      const annualEnergySave = count * 320; // Economia anual média de luz por aparelho limpo
+      const totalEconomy = (annualTechCost + annualEnergySave) - 37;
+
+      techCostEl.textContent = `R$ ${annualTechCost.toLocaleString('pt-BR')}`;
+      energySaveEl.textContent = `+ R$ ${annualEnergySave.toLocaleString('pt-BR')}/ano`;
+      totalSaveEl.textContent = `R$ ${totalEconomy.toLocaleString('pt-BR')}`;
+    });
+
+    // 4. FAQ Accordion
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('.faq-icon');
+        const isOpen = !content.classList.contains('hidden');
+
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          icon.textContent = '−';
+        }
+      });
+    });
+
+    // 5. Sticky Mobile Bar on Scroll
+    const stickyBar = document.getElementById('sticky-bar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 450) {
+        stickyBar.classList.remove('translate-y-full');
+      } else {
+        stickyBar.classList.add('translate-y-full');
+      }
+    }, { passive: true });
+
+    // 6. Smart Exit Popup (Desktop Mouse Leave + Mobile Back/Scroll Intent)
+    let exitShown = sessionStorage.getItem('exit_popup_shown') === 'true';
+    const exitModal = document.getElementById('exit-modal');
+
+    function showExitModal() {
+      if (exitShown) return;
+      exitShown = true;
+      sessionStorage.setItem('exit_popup_shown', 'true');
+      exitModal.classList.remove('hidden');
+      exitModal.classList.add('flex');
+    }
+
+    function closeExitModal() {
+      exitModal.classList.add('hidden');
+      exitModal.classList.remove('flex');
+    }
+
+    // Desktop: cursor sai pelo topo
+    document.addEventListener('mouseleave', (e) => {
+      if (e.clientY <= 10) showExitModal();
+    });
+
+    // Mobile: usuário rola para baixo e dá um puxão rápido para cima (intenção de voltar)
+    let lastScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const currentY = window.scrollY;
+      if (lastScrollY > 600 && (lastScrollY - currentY) > 180) {
+        showExitModal();
+      }
+      lastScrollY = currentY;
+    }, { passive: true });
+  </script>
+</body>
+</html>

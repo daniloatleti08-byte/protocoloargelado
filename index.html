@@ -42,14 +42,16 @@
 
   <!-- CONFIGURAÇÃO CENTRAL DA OFERTA (EDITE AQUI SEUS LINKS E PIXEL) -->
   <script>
+    <!-- CONFIGURAÇÃO CENTRAL DA OFERTA -->
+  <script>
     const OFFER_CONFIG = {
       checkoutUrlMain: "https://pay.cakto.com.br/337ai2h_1347449", // Link Checkout R$ 37,00
       checkoutUrlDiscount: "https://pay.cakto.com.br/mwi4tou", // Link Checkout R$ 27,00 (Exit Popup)
-      metaPixelId: "1428548336100912" // Ex: "1428548336100912"
+      metaPixelId: "1428548336100912"
     };
 
     // Inicialização limpa do Meta Pixel (Apenas PageView automático)
-    if (OFFER_CONFIG.metaPixelId && OFFER_CONFIG.metaPixelId !== "1428548336100912") {
+    if (OFFER_CONFIG.metaPixelId && OFFER_CONFIG.metaPixelId !== "SEU_PIXEL_ID_AQUI") {
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};

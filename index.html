@@ -577,28 +577,34 @@
 
   <!-- INTERACTIVE SCRIPTS -->
   <script>
-    // 1. Checkout Redirect com disparo seguro do InitiateCheckout + UTMs
+    // 1. Checkout Redirect Blindado (Sem duplicar InitiateCheckout com a Cakto + Trava de clique duplo)
+    let isRedirecting = false;
+
     function goToCheckout(type) {
+      if (isRedirecting) return;
+      isRedirecting = true;
+
       const targetUrl = type === 'discount'
         ? OFFER_CONFIG.checkoutUrlDiscount
         : OFFER_CONFIG.checkoutUrlMain;
 
       try {
         if (typeof fbq === 'function') {
-          fbq('track', 'InitiateCheckout', {
+          fbq('track', 'ViewContent', {
+            content_name: type === 'discount' ? 'Oferta Exit R$ 27' : 'Oferta Principal R$ 37',
             value: type === 'discount' ? 27.00 : 37.00,
             currency: 'BRL'
           });
         }
-      } catch (e) {
-        // Garante que qualquer bloqueador de script não trave o redirecionamento
-      }
+      } catch (e) {}
 
       const currentParams = window.location.search;
       const separator = targetUrl.includes('?') ? '&' : '?';
       const finalUrl = currentParams ? targetUrl + separator + currentParams.substring(1) : targetUrl;
 
       window.location.href = finalUrl;
+
+      setTimeout(() => { isRedirecting = false; }, 3000);
     }
 
     // 2. Interactive Before/After Slider

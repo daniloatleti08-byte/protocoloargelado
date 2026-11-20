@@ -48,7 +48,7 @@
     };
   </script>
 
-  <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code (Apenas PageView — Eventos de Checkout ficam na Cakto) -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -577,7 +577,7 @@
 
   <!-- INTERACTIVE SCRIPTS -->
   <script>
-    // 1. Checkout Redirect Blindado (Sem duplicar InitiateCheckout com a Cakto + Trava de clique duplo)
+    // 1. Checkout Redirect Limpo (Sem disparar eventos de checkout na página + Trava de clique duplo + UTMs)
     let isRedirecting = false;
 
     function goToCheckout(type) {
@@ -587,16 +587,6 @@
       const targetUrl = type === 'discount'
         ? OFFER_CONFIG.checkoutUrlDiscount
         : OFFER_CONFIG.checkoutUrlMain;
-
-      try {
-        if (typeof fbq === 'function') {
-          fbq('track', 'ViewContent', {
-            content_name: type === 'discount' ? 'Oferta Exit R$ 27' : 'Oferta Principal R$ 37',
-            value: type === 'discount' ? 27.00 : 37.00,
-            currency: 'BRL'
-          });
-        }
-      } catch (e) {}
 
       const currentParams = window.location.search;
       const separator = targetUrl.includes('?') ? '&' : '?';

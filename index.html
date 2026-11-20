@@ -368,7 +368,7 @@
   <section id="oferta" class="py-16 sm:py-24 bg-gradient-to-b from-slate-50 to-ice-50/60">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
 
-      <!-- INSIDE THE APP PREVIEW (LAZY-LOADED MOBILE MOCKUP) -->
+      <!-- INSIDE THE APP PREVIEW (INSTANT LOOP LIKE AN HD GIF) -->
       <div class="mb-12 text-center">
         <span class="inline-flex items-center gap-1.5 bg-ice-100 text-ice-800 font-extrabold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full mb-3">
           📱 Veja Por Dentro do Guia Interativo
@@ -380,33 +380,20 @@
           Com cronômetro de 20 minutos, trava de segurança do disjuntor, ilustrações técnicas de cada etapa e calculadoras prontas:
         </p>
 
-        <!-- Clean Smartphone Frame tailored to video_1.mp4 -->
+        <!-- Clean Smartphone Frame -->
         <div class="mx-auto w-[265px] sm:w-[295px] bg-navy-900 rounded-[2.5rem] p-2.5 shadow-2xl border-[3px] border-slate-800 relative">
-          <!-- Speaker Bar on Top Bezel (does not overlap video screen) -->
           <div class="w-16 h-1 bg-slate-700 rounded-full mx-auto mb-2 mt-0.5"></div>
 
-          <!-- Screen Viewport (aspect-[9/18.2] preserves full width & header, trims bottom Safari bar) -->
-          <div class="relative w-full aspect-[9/18.2] rounded-[1.85rem] overflow-hidden bg-navy-900">
+          <div class="relative w-full aspect-[9/18.2] rounded-[1.85rem] overflow-hidden bg-slate-100">
             <video
-              id="app-preview-video"
-              class="w-full h-full object-cover object-top"
+              class="w-full h-full object-cover object-top pointer-events-none"
+              src="./video_1.mp4"
+              autoplay
               muted
               loop
               playsinline
-              preload="none"
-            >
-              <source src="./video_1.mp4" type="video/mp4" />
-            </video>
-
-            <!-- Play/Pause Overlay Button -->
-            <button
-              type="button"
-              id="video-toggle-btn"
-              aria-label="Pausar ou reproduzir demonstração"
-              class="absolute bottom-14 right-2.5 z-20 bg-navy-900/80 hover:bg-navy-900 text-white text-[11px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm border border-white/15 transition"
-            >
-              ⏸ Pausar
-            </button>
+              preload="auto"
+            ></video>
           </div>
         </div>
       </div>
@@ -738,36 +725,6 @@
       }
       lastScrollY = currentY;
     }, { passive: true });
-
-    // 7. Lazy Autoplay & Toggle para o Vídeo de Demonstração do App
-    const previewVideo = document.getElementById('app-preview-video');
-    const videoToggleBtn = document.getElementById('video-toggle-btn');
-
-    if (previewVideo && 'IntersectionObserver' in window) {
-      const videoObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            previewVideo.play().catch(() => {});
-          } else {
-            previewVideo.pause();
-          }
-        });
-      }, { threshold: 0.25 });
-
-      videoObserver.observe(previewVideo);
-    }
-
-    if (previewVideo && videoToggleBtn) {
-      videoToggleBtn.addEventListener('click', () => {
-        if (previewVideo.paused) {
-          previewVideo.play();
-          videoToggleBtn.textContent = '⏸ Pausar';
-        } else {
-          previewVideo.pause();
-          videoToggleBtn.textContent = '▶ Reproduzir';
-        }
-      });
-    }
   </script>
 </body>
 </html>

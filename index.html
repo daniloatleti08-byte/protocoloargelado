@@ -410,8 +410,6 @@
             >
               <source src="./video_1.mp4" type="video/mp4" />
               <source src="/video_1.mp4" type="video/mp4" />
-              <source src="./captura%20da%20tela(1).mp4" type="video/mp4" />
-              <source src="/captura%20da%20tela(1).mp4" type="video/mp4" />
             </video>
           </div>
         </div>
@@ -626,7 +624,92 @@
 
   <!-- INTERACTIVE SCRIPTS -->
   <script>
-    // 1. Checkout Redirect Limpo (Sem disparar eventos de checkout na página + Trava de clique duplo + UTMs)
+    // 1. Captura, Persistência e Repasse Completo de UTMs + fbclid + sck (Cakto)
+    (function initUtmTracker() {
+      const STORAGE_KEY = 'pag_tracking_params_v1';
+      const TRACKED_KEYS = [
+        'utm_source',
+        'utm_medium',
+        'utm_campaign',
+        'utm_content',
+        'utm_term',
+        'fbclid',
+        'gclid',
+        'src',
+        'sck'
+      ];
+
+      let savedParams = {};
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY) || sessionStorage.getItem(STORAGE_KEY);
+        if (raw) savedParams = JSON.parse(raw);
+      } catch (e) {}
+
+      const urlParams = new URLSearchParams(window.location.search);
+      let hasNewParams = false;
+
+      urlParams.forEach((value, key) => {
+        if (value && value.trim() !== '') {
+          savedParams[key] = value.trim();
+          hasNewParams = true;
+        }
+      });
+
+      TRACKED_KEYS.forEach((key) => {
+        const val = urlParams.get(key);
+        if (val && val.trim() !== '') {
+          savedParams[key] = val.trim();
+          hasNewParams = true;
+        }
+      });
+
+      if (!savedParams.utm_source && (savedParams.fbclid || /facebook\.com|instagram\.com/i.test(document.referrer))) {
+        savedParams.utm_source = 'FB';
+        hasNewParams = true;
+      }
+
+      if (!savedParams.sck && (savedParams.utm_campaign || savedParams.utm_medium || savedParams.utm_content)) {
+        const sckParts = [
+          savedParams.utm_source || 'FB',
+          savedParams.utm_campaign || '',
+          savedParams.utm_medium || '',
+          savedParams.utm_content || ''
+        ].filter(Boolean);
+        if (sckParts.length > 0) {
+          savedParams.sck = sckParts.join('|');
+          hasNewParams = true;
+        }
+      }
+
+      if (hasNewParams) {
+        try {
+          const serialized = JSON.stringify(savedParams);
+          localStorage.setItem(STORAGE_KEY, serialized);
+          sessionStorage.setItem(STORAGE_KEY, serialized);
+        } catch (e) {}
+      }
+
+      window.buildCheckoutUrlWithUtms = function(baseUrl) {
+        try {
+          const finalUrl = new URL(baseUrl);
+          Object.keys(savedParams).forEach((key) => {
+            if (savedParams[key] && !finalUrl.searchParams.has(key)) {
+              finalUrl.searchParams.set(key, savedParams[key]);
+            }
+          });
+          return finalUrl.toString();
+        } catch (e) {
+          const queryPairs = Object.keys(savedParams)
+            .filter((k) => savedParams[k])
+            .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(savedParams[k]));
+          if (!queryPairs.length) return baseUrl;
+          const sep = baseUrl.includes('?') ? '&' : '?';
+          return baseUrl + sep + queryPairs.join('&');
+        }
+      };
+    })();
+
+    // 2. Checkout Redirect Limpo (Sem disparar eventos de checkout na página + Trava de clique duplo + UTMs persistentes)
     let isRedirecting = false;
 
     function goToCheckout(type) {
@@ -637,16 +720,16 @@
         ? OFFER_CONFIG.checkoutUrlDiscount
         : OFFER_CONFIG.checkoutUrlMain;
 
-      const currentParams = window.location.search;
-      const separator = targetUrl.includes('?') ? '&' : '?';
-      const finalUrl = currentParams ? targetUrl + separator + currentParams.substring(1) : targetUrl;
+      const finalUrl = window.buildCheckoutUrlWithUtms
+        ? window.buildCheckoutUrlWithUtms(targetUrl)
+        : targetUrl;
 
       window.location.href = finalUrl;
 
       setTimeout(() => { isRedirecting = false; }, 3000);
     }
 
-    // 2. Interactive Before/After Slider
+    // 3. Interactive Before/After Slider
     const compareContainer = document.getElementById('compare-container');
     const beforeLayer = document.getElementById('before-layer');
     const sliderBar = document.getElementById('slider-bar');
@@ -668,7 +751,7 @@
     window.addEventListener('touchend', () => { isDragging = false; });
     window.addEventListener('touchmove', (e) => { if (isDragging) updateSlider(e.touches[0].clientX); }, { passive: true });
 
-    // 3. Dynamic Savings Calculator
+    // 4. Dynamic Savings Calculator
     const acSlider = document.getElementById('ac-slider');
     const acCountLabel = document.getElementById('ac-count-label');
     const techCostEl = document.getElementById('tech-cost');
@@ -688,7 +771,7 @@
       totalSaveEl.textContent = `R$ ${totalEconomy.toLocaleString('pt-BR')}`;
     });
 
-    // 4. FAQ Accordion
+    // 5. FAQ Accordion
     document.querySelectorAll('.faq-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const content = btn.nextElementSibling;
@@ -705,7 +788,7 @@
       });
     });
 
-    // 5. Sticky Mobile Bar on Scroll
+    // 6. Sticky Mobile Bar on Scroll
     const stickyBar = document.getElementById('sticky-bar');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 450) {
@@ -715,7 +798,7 @@
       }
     }, { passive: true });
 
-    // 6. Smart Exit Popup (Desktop Mouse Leave + Mobile Back/Scroll Intent)
+    // 7. Smart Exit Popup (Desktop Mouse Leave + Mobile Back/Scroll Intent)
     let exitShown = sessionStorage.getItem('exit_popup_shown') === 'true';
     const exitModal = document.getElementById('exit-modal');
 
@@ -745,7 +828,7 @@
       lastScrollY = currentY;
     }, { passive: true });
 
-    // 7. Força autoplay do vídeo demonstrativo no Safari e Chrome mobile
+    // 8. Força autoplay do vídeo demonstrativo no Safari e Chrome mobile
     const demoVideo = document.getElementById('demo-video');
     if (demoVideo) {
       demoVideo.muted = true;

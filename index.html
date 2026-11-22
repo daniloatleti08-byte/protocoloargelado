@@ -572,16 +572,16 @@
     </p>
   </footer>
 
-  <!-- STICKY MOBILE CTA BAR -->
+  <!-- STICKY MOBILE CTA BAR (VAI DIRETO PRO CHECKOUT COM UTMs) -->
   <div id="sticky-bar" class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] z-40 transform translate-y-full transition-transform duration-300 md:hidden">
     <div class="flex items-center justify-between gap-3 max-w-lg mx-auto">
       <div>
         <span class="text-[11px] text-slate-500 line-through block leading-none">De R$ 97,00</span>
         <span class="font-display font-extrabold text-lg text-navy-900">R$ 37,00</span>
       </div>
-      <a href="#oferta" class="flex-1 text-center bg-emerald-600 text-white font-display font-extrabold text-sm py-3 px-4 rounded-xl shadow">
-        LIMPAR MEU AR AGORA
-      </a>
+      <button type="button" onclick="goToCheckout('main')" class="flex-1 text-center bg-emerald-600 hover:bg-emerald-500 text-white font-display font-extrabold text-sm py-3 px-4 rounded-xl shadow cursor-pointer">
+        LIMPAR MEU AR AGORA →
+      </button>
     </div>
   </div>
 

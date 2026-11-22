@@ -40,11 +40,10 @@
     }
   </script>
 
-  <!-- LINKS DA CAKTO E CONFIGURAÇÃO -->
+  <!-- LINK DA CAKTO E CONFIGURAÇÃO -->
   <script>
     const OFFER_CONFIG = {
-      checkoutUrlMain: "https://pay.cakto.com.br/337ai2h_1347449", // Checkout R$ 37,00
-      checkoutUrlDiscount: "https://pay.cakto.com.br/mwi4tou" // Checkout R$ 27,00 (Exit Popup)
+      checkoutUrlMain: "https://pay.cakto.com.br/337ai2h_1347449" // Checkout R$ 37,00
     };
   </script>
 
@@ -483,7 +482,7 @@
             </div>
 
             <!-- Main Checkout Button -->
-            <button type="button" onclick="goToCheckout('main')" class="btn-pulse w-full mt-4 bg-emerald-600 hover:bg-emerald-500 text-white font-display font-extrabold text-lg sm:text-xl py-4 px-6 rounded-xl transition-all shadow-xl cursor-pointer">
+            <button type="button" onclick="goToCheckout()" class="btn-pulse w-full mt-4 bg-emerald-600 hover:bg-emerald-500 text-white font-display font-extrabold text-lg sm:text-xl py-4 px-6 rounded-xl transition-all shadow-xl cursor-pointer">
               LIBERAR MEU ACESSO AGORA →
             </button>
 
@@ -579,45 +578,8 @@
         <span class="text-[11px] text-slate-500 line-through block leading-none">De R$ 97,00</span>
         <span class="font-display font-extrabold text-lg text-navy-900">R$ 37,00</span>
       </div>
-      <button type="button" onclick="goToCheckout('main')" class="flex-1 text-center bg-emerald-600 hover:bg-emerald-500 text-white font-display font-extrabold text-sm py-3 px-4 rounded-xl shadow cursor-pointer">
+      <button type="button" onclick="goToCheckout()" class="flex-1 text-center bg-emerald-600 hover:bg-emerald-500 text-white font-display font-extrabold text-sm py-3 px-4 rounded-xl shadow cursor-pointer">
         LIMPAR MEU AR AGORA →
-      </button>
-    </div>
-  </div>
-
-  <!-- EXIT INTENT POPUP (R$ 27,00 DISCOUNT) -->
-  <div id="exit-modal" class="fixed inset-0 bg-navy-900/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center relative shadow-2xl border-2 border-emerald-500">
-      <button type="button" onclick="closeExitModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:text-slate-800 font-bold">
-        ✕
-      </button>
-
-      <span class="inline-block bg-red-100 text-red-700 font-extrabold text-xs uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-        🎁 Espere! Desconto Liberado
-      </span>
-
-      <h3 class="font-display text-2xl font-extrabold text-navy-900 leading-tight">
-        Não Pague R$ 250 Para o Técnico Por Causa de R$ 10...
-      </h3>
-
-      <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-        Como você ainda está na página, liberei um <strong>cupom imediato de R$ 10 OFF</strong> para você testar o Protocolo Ar Gelado™ hoje mesmo sem desculpas.
-      </p>
-
-      <div class="my-5 bg-emerald-50 border border-emerald-200 rounded-2xl p-4">
-        <span class="text-xs text-slate-500 line-through">De R$ 37,00</span>
-        <div class="font-display text-4xl font-extrabold text-emerald-700">
-          R$ 27,00
-        </div>
-        <span class="text-xs font-semibold text-emerald-800">Acesso completo + Todos os Bônus + Garantia de 7 dias</span>
-      </div>
-
-      <button type="button" onclick="goToCheckout('discount')" class="btn-pulse w-full bg-emerald-600 hover:bg-emerald-500 text-white font-display font-extrabold text-base py-4 px-5 rounded-xl shadow-lg cursor-pointer">
-        APROVEITAR DESCONTO POR R$ 27 →
-      </button>
-
-      <button type="button" onclick="closeExitModal()" class="mt-3 text-xs text-slate-400 hover:text-slate-600 underline block mx-auto">
-        Não obrigado, prefiro pagar R$ 250 para um técnico
       </button>
     </div>
   </div>
@@ -712,14 +674,11 @@
     // 2. Checkout Redirect Limpo (Sem disparar eventos de checkout na página + Trava de clique duplo + UTMs persistentes)
     let isRedirecting = false;
 
-    function goToCheckout(type) {
+    function goToCheckout() {
       if (isRedirecting) return;
       isRedirecting = true;
 
-      const targetUrl = type === 'discount'
-        ? OFFER_CONFIG.checkoutUrlDiscount
-        : OFFER_CONFIG.checkoutUrlMain;
-
+      const targetUrl = OFFER_CONFIG.checkoutUrlMain;
       const finalUrl = window.buildCheckoutUrlWithUtms
         ? window.buildCheckoutUrlWithUtms(targetUrl)
         : targetUrl;
@@ -798,37 +757,7 @@
       }
     }, { passive: true });
 
-    // 7. Smart Exit Popup (Desktop Mouse Leave + Mobile Back/Scroll Intent)
-    let exitShown = sessionStorage.getItem('exit_popup_shown') === 'true';
-    const exitModal = document.getElementById('exit-modal');
-
-    function showExitModal() {
-      if (exitShown) return;
-      exitShown = true;
-      sessionStorage.setItem('exit_popup_shown', 'true');
-      exitModal.classList.remove('hidden');
-      exitModal.classList.add('flex');
-    }
-
-    function closeExitModal() {
-      exitModal.classList.add('hidden');
-      exitModal.classList.remove('flex');
-    }
-
-    document.addEventListener('mouseleave', (e) => {
-      if (e.clientY <= 10) showExitModal();
-    });
-
-    let lastScrollY = window.scrollY;
-    window.addEventListener('scroll', () => {
-      const currentY = window.scrollY;
-      if (lastScrollY > 600 && (lastScrollY - currentY) > 180) {
-        showExitModal();
-      }
-      lastScrollY = currentY;
-    }, { passive: true });
-
-    // 8. Força autoplay do vídeo demonstrativo no Safari e Chrome mobile
+    // 7. Força autoplay do vídeo demonstrativo no Safari e Chrome mobile
     const demoVideo = document.getElementById('demo-video');
     if (demoVideo) {
       demoVideo.muted = true;

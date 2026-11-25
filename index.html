@@ -1,53 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Protocolo Ar Gelado™ — Limpeza de Split em 20 Minutos</title>
-  <meta name="description" content="Aprenda o método caseiro de 20 minutos para limpar seu ar-condicionado Split sem risco de molhar a placa e economize R$ 250 por aparelho." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protocolo Ar Gelado™ – Limpe seu Ar-Condicionado Split em Casa com Segurança</title>
+  <meta name="description" content="Aprenda a higienizar a turbina e a serpentina do seu ar-condicionado split em 20 minutos, economize até R$ 250 de técnico e proteja 100% a placa eletrônica.">
 
-  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Plus Jakarta Sans', 'sans-serif'],
-          },
-          colors: {
-            ice: {
-              50: '#F0F9FF',
-              100: '#E0F2FE',
-              500: '#0EA5E9',
-              600: '#0284C7',
-              700: '#0369A1',
-              900: '#0C4A6E',
-            },
-            navy: {
-              900: '#0B132B',
-              800: '#16213E',
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- LINK DA CAKTO E CONFIGURAÇÃO -->
-  <script>
-    const OFFER_CONFIG = {
-      checkoutUrlMain: "https://pay.cakto.com.br/337ai2h_1347449" // Checkout R$ 37,00
-    };
-  </script>
-
-  <!-- Meta Pixel Code (Apenas PageView — Eventos de Checkout ficam na Cakto) -->
+  <!-- =========================================================
+       META PIXEL CODE (Facebook Ads)
+       Pixel ID Oficial Ativo: 1428548336100912
+       Rastreamento limpo: PageView + ViewContent na página.
+       InitiateCheckout oficial dispara apenas dentro da Cakto.
+       ========================================================= -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -57,735 +21,1121 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
+
+    const META_PIXEL_ID = '1428548336100912';
     fbq('init', '1428548336100912');
     fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {
+      content_name: 'Protocolo Ar Gelado',
+      value: 37.00,
+      currency: 'BRL'
+    });
   </script>
   <noscript>
     <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1428548336100912&ev=PageView&noscript=1"/>
+         src="https://www.facebook.com/tr?id=1428548336100912&ev=PageView&noscript=1" />
   </noscript>
   <!-- End Meta Pixel Code -->
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- YouTube Iframe API para controle de áudio e unmute inteligente -->
+  <script src="https://www.youtube.com/iframe_api" async></script>
   <style>
-    @keyframes pulse-cta {
-      0%, 100% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.45); }
-      50% { transform: scale(1.02); box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.65); }
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #0F172A;
+      background: #F4F8FB;
+      line-height: 1.62;
+      overflow-x: hidden;
+      padding-bottom: 76px;
     }
-    .btn-pulse {
-      animation: pulse-cta 2.4s infinite ease-in-out;
+    @media (min-width: 768px) {
+      body { padding-bottom: 0; }
     }
-    .bg-grid-pattern {
-      background-image: radial-gradient(rgba(14, 165, 233, 0.14) 1px, transparent 1px);
-      background-size: 20px 20px;
+
+    /* ===== PALETTE TOKENS (CLIMA / REFRIGERAÇÃO + CTA VERDE ALTA CONVERSÃO) ===== */
+    :root {
+      --bg-ice:        #F4F8FB;
+      --bg-card:       #FFFFFF;
+      --navy:          #0A2540;
+      --navy-deep:     #061729;
+      --cyan:          #0284C7;
+      --cyan-light:    #38BDF8;
+      --cyan-soft:     #E0F2FE;
+      --verde:         #15803D;
+      --verde-top:     #16A34A;
+      --verde-borda:   #14532D;
+      --alerta:        #B91C1C;
+      --alerta-soft:   #FEF2F2;
+      --texto:         #0F172A;
+      --texto-muted:   #475569;
+      --sombra:        0 6px 24px rgba(10, 37, 64, .07);
+      --sombra-hover:  0 12px 36px rgba(10, 37, 64, .13);
+      --radius:        16px;
+      --radius-sm:     10px;
     }
-    input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      height: 24px;
-      width: 24px;
-      border-radius: 50%;
-      background: #0284C7;
-      border: 3px solid #ffffff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+
+    h1, h2, h3 { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; color: var(--navy); }
+    h1 { font-weight: 800; }
+    h2 { font-weight: 800; }
+    h3 { font-weight: 700; }
+
+    .container { width: 100%; max-width: 960px; margin: 0 auto; padding: 0 18px; }
+    .section   { padding: 56px 0; }
+    .text-center { text-align: center; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes pulse-cta-green {
+      0%, 100% { box-shadow: 0 6px 24px rgba(22, 163, 74, .38), 0 0 0 0 rgba(22, 163, 74, .5); }
+      50%      { box-shadow: 0 8px 30px rgba(22, 163, 74, .52), 0 0 0 12px rgba(22, 163, 74, 0); }
+    }
+    @keyframes unmute-pulse {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.03); }
+    }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fade-up .5s ease-out both; }
+
+    /* ===== TOP ALERT BAR ===== */
+    .top-bar {
+      background: var(--navy-deep);
+      color: #E0F2FE;
+      text-align: center;
+      font-size: .78rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      letter-spacing: .02em;
+    }
+    .top-bar strong { color: #38BDF8; }
+
+    /* ===== HERO (PRIMEIRA DOBRA ESPELHADA COM OS ANÚNCIOS) ===== */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 26px 16px 42px;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(2, 132, 199, .14) 0%, transparent 62%),
+        linear-gradient(180deg, #FFFFFF 0%, #F4F8FB 100%);
+    }
+    @media (min-width: 768px) {
+      .hero { padding: 44px 20px 56px; }
+    }
+    .hero-inner { max-width: 760px; margin: 0 auto; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--cyan-soft);
+      border: 1px solid rgba(2, 132, 199, .3);
+      color: #0369A1;
+      font-size: .73rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 100px;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.46rem, 4.3vw, 2.38rem);
+      line-height: 1.2;
+      margin-bottom: 12px;
+      letter-spacing: -.02em;
+    }
+    .hero h1 span {
+      color: var(--cyan);
+    }
+
+    .hero-sub {
+      font-size: clamp(.92rem, 2.3vw, 1.08rem);
+      color: var(--texto-muted);
+      max-width: 640px;
+      margin: 0 auto 22px;
+      line-height: 1.55;
+    }
+
+    /* ===== VIDEO POCKET VSL (VERTICAL 9:16) ===== */
+    .vsl-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 310px;
+      margin: 0 auto 18px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 14px 40px rgba(10, 37, 64, .2);
+      border: 2px solid rgba(2, 132, 199, .45);
+      background: #061729;
+    }
+    @media (min-width: 768px) {
+      .vsl-wrapper { max-width: 340px; margin-bottom: 24px; }
+    }
+    .vsl-ratio {
+      position: relative;
+      padding-bottom: 177.78%;
+      background: #061729;
+    }
+    .vsl-ratio iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* ===== SMART UNMUTE OVERLAY ===== */
+    .vsl-unmute-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 8;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 14px;
+      padding-top: 22%;
+      background: radial-gradient(circle at center, rgba(6, 23, 41, .16) 0%, rgba(6, 23, 41, .52) 100%);
       cursor: pointer;
+      transition: opacity .35s ease, visibility .35s ease;
     }
+    .vsl-unmute-overlay.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .vsl-unmute-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #E0F2FE 45%, #BAE6FD 100%);
+      color: var(--navy-deep);
+      border: 2.5px solid #FFFFFF;
+      padding: 12px 16px;
+      border-radius: 100px;
+      box-shadow: 0 0 28px rgba(56, 189, 248, .85), 0 8px 24px rgba(0,0,0,.5);
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      text-align: left;
+      animation: unmute-pulse 1.8s infinite ease-in-out;
+      width: 100%;
+      max-width: 280px;
+    }
+    .vsl-unmute-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--navy) 100%);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .vsl-unmute-content {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .vsl-unmute-alert {
+      font-size: .64rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      color: #0369A1;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .vsl-unmute-title {
+      font-size: .92rem;
+      font-weight: 900;
+      color: var(--navy-deep);
+      text-transform: uppercase;
+    }
+    .vsl-unmute-sub {
+      font-size: .68rem;
+      font-weight: 600;
+      color: var(--texto-muted);
+      margin-top: 2px;
+    }
+
+    /* ===== FAIXA DE PROVA RÁPIDA (QUEBRA OBJEÇÃO ANTES DO CLIQUE) ===== */
+    .hero-proof-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      max-width: 580px;
+      margin: 0 auto 20px;
+    }
+    .proof-pill {
+      background: #FFFFFF;
+      border: 1px solid rgba(2, 132, 199, .24);
+      border-radius: 12px;
+      padding: 10px 6px;
+      box-shadow: 0 3px 10px rgba(10, 37, 64, .05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.25;
+    }
+    .proof-pill-top {
+      font-size: .68rem;
+      font-weight: 700;
+      color: var(--texto-muted);
+      text-transform: uppercase;
+    }
+    .proof-pill-main {
+      font-size: .85rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-top: 2px;
+    }
+    @media (min-width: 640px) {
+      .proof-pill { padding: 12px 14px; }
+      .proof-pill-main { font-size: .95rem; }
+    }
+
+    /* ===== CTA BUTTON ===== */
+    .btn-cta {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 470px;
+      background: linear-gradient(180deg, var(--verde-top) 0%, var(--verde) 100%);
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: clamp(.96rem, 2.6vw, 1.12rem);
+      padding: 17px 24px;
+      border: none;
+      border-bottom: 4px solid var(--verde-borda);
+      border-radius: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: .01em;
+      text-shadow: 0 1px 2px rgba(0,0,0,.2);
+      transition: transform .18s ease, filter .2s ease;
+      animation: pulse-cta-green 2.2s infinite;
+    }
+    .btn-cta:hover {
+      transform: translateY(-2px) scale(1.015);
+      filter: brightness(1.05);
+    }
+    .btn-cta:active {
+      transform: translateY(1px);
+      border-bottom-width: 2px;
+    }
+    .btn-cta-sub {
+      display: block;
+      font-size: .74rem;
+      font-weight: 600;
+      opacity: .94;
+      margin-top: 3px;
+    }
+    .cta-note {
+      display: block;
+      margin-top: 10px;
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--texto-muted);
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      background: var(--navy);
+      padding: 14px 16px;
+      text-align: center;
+      color: rgba(255,255,255,.94);
+      font-size: .82rem;
+      font-weight: 500;
+      display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: center; align-items: center;
+    }
+    .trust-bar span { display: inline-flex; align-items: center; gap: 6px; }
+    .trust-bar svg { width: 16px; height: 16px; fill: var(--cyan-light); flex-shrink: 0; }
+
+    /* ===== SECTION HEADERS ===== */
+    .section-label {
+      display: inline-block;
+      font-size: .74rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(1.45rem, 3.8vw, 2.1rem);
+      line-height: 1.24;
+      margin-bottom: 14px;
+    }
+    .section-desc {
+      color: var(--texto-muted);
+      max-width: 640px;
+      margin: 0 auto 34px;
+      font-size: clamp(.92rem, 2.2vw, 1.02rem);
+    }
+
+    /* ===== SEÇÃO PROBLEMA OCULTO (POR QUE NÃO GELA) ===== */
+    .alert-grid {
+      display: grid;
+      gap: 18px;
+      text-align: left;
+    }
+    @media (min-width: 768px) {
+      .alert-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .alert-card {
+      background: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      box-shadow: var(--sombra);
+      border-top: 4px solid var(--alerta);
+    }
+    .alert-tag {
+      display: inline-block;
+      background: var(--alerta-soft);
+      color: var(--alerta);
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+    .alert-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+    .alert-card p {
+      font-size: .9rem;
+      color: var(--texto-muted);
+    }
+
+    /* ===== SEÇÃO SEGURANÇA EM 3 ETAPAS (MATA O MEDO DE ESTRAGAR) ===== */
+    .steps-section {
+      background: #FFFFFF;
+    }
+    .steps-grid {
+      display: grid;
+      gap: 20px;
+      text-align: left;
+    }
+    @media (min-width: 768px) {
+      .steps-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .step-card {
+      background: var(--bg-ice);
+      border: 1px solid rgba(2, 132, 199, .2);
+      border-radius: var(--radius);
+      padding: 26px 20px;
+    }
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      background: var(--cyan);
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+    }
+    .step-card h3 {
+      font-size: 1.12rem;
+      margin-bottom: 8px;
+    }
+    .step-card p {
+      font-size: .9rem;
+      color: var(--texto-muted);
+    }
+
+    /* ===== DELIVERABLES (DARK NAVY) ===== */
+    .deliverables-section {
+      background: linear-gradient(170deg, var(--navy) 0%, var(--navy-deep) 100%);
+      color: #FFFFFF;
+    }
+    .deliverables-section .section-label { color: var(--cyan-light); }
+    .deliverables-section .section-title { color: #FFFFFF; }
+    .deliverables-section .section-desc  { color: rgba(255,255,255,.8); }
+
+    .benefit-grid { display: grid; gap: 16px; text-align: left; }
+    @media (min-width: 640px) { .benefit-grid { grid-template-columns: 1fr 1fr; } }
+
+    .benefit-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius-sm);
+      padding: 20px 18px;
+    }
+    .benefit-check {
+      flex-shrink: 0;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: var(--verde-top);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .benefit-check svg { width: 16px; height: 16px; fill: #fff; }
+    .benefit-item h3 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700; font-size: .96rem;
+      color: var(--cyan-light);
+      margin-bottom: 4px;
+    }
+    .benefit-item p { color: rgba(255,255,255,.85); font-size: .88rem; }
+
+    /* ===== COMPARATIVO + OFERTA ===== */
+    .price-section {
+      background: radial-gradient(ellipse at 50% 0%, rgba(2, 132, 199, .1) 0%, transparent 60%), var(--bg-ice);
+    }
+    .compare-box {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      display: grid;
+      gap: 14px;
+      text-align: left;
+    }
+    @media (min-width: 640px) {
+      .compare-box { grid-template-columns: 1fr 1fr; }
+    }
+    .compare-col {
+      background: #FFFFFF;
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      border: 1px solid #CBD5E1;
+    }
+    .compare-col--win {
+      border: 2px solid var(--verde-top);
+      background: #F0FDF4;
+    }
+    .compare-col h4 {
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: 6px;
+      color: var(--texto-muted);
+    }
+    .compare-col--win h4 { color: var(--verde); }
+    .compare-price {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--alerta);
+      margin-bottom: 8px;
+    }
+    .compare-col--win .compare-price { color: var(--verde); }
+    .compare-col ul {
+      list-style: none;
+      font-size: .86rem;
+      color: var(--texto-muted);
+    }
+    .compare-col li { margin-bottom: 5px; }
+
+    .price-card {
+      max-width: 520px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 36px 24px;
+      box-shadow: 0 12px 44px rgba(10, 37, 64, .12);
+      border: 2px solid rgba(2, 132, 199, .35);
+      text-align: center;
+    }
+    .price-old {
+      font-size: 1rem; color: var(--texto-muted);
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .price-new {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(3rem, 8vw, 4.1rem);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .price-tag {
+      display: inline-block;
+      background: rgba(21, 128, 61, .12);
+      color: var(--verde);
+      font-weight: 800; font-size: .76rem; letter-spacing: .04em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 100px;
+      margin-bottom: 22px;
+    }
+
+    /* ===== GUARANTEE & FAQ ===== */
+    .guarantee {
+      display: flex; gap: 18px; align-items: center;
+      background: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      box-shadow: var(--sombra);
+      border-left: 5px solid var(--verde-top);
+      max-width: 680px;
+      margin: 0 auto 42px;
+      text-align: left;
+    }
+    @media (max-width: 640px) {
+      .guarantee { flex-direction: column; text-align: center; }
+    }
+    .guarantee-badge {
+      flex-shrink: 0;
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--verde) 0%, var(--verde-top) 100%);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .guarantee-badge svg { width: 30px; height: 30px; fill: #fff; }
+    .guarantee h3 { font-size: 1.05rem; color: var(--verde); margin-bottom: 6px; }
+    .guarantee p { font-size: .9rem; color: var(--texto-muted); }
+
+    .faq-list { max-width: 680px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid #CBD5E1; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      width: 100%;
+      background: none; border: none;
+      padding: 18px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: .98rem; font-weight: 700;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      text-align: left;
+    }
+    .faq-q::after {
+      content: '+';
+      font-size: 1.4rem; font-weight: 400;
+      color: var(--cyan);
+      transition: transform .3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease, padding .3s;
+      color: var(--texto-muted);
+      font-size: .92rem;
+      text-align: left;
+    }
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding-bottom: 18px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy-deep);
+      color: rgba(255,255,255,.72);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: .78rem;
+    }
+    footer a { color: rgba(255,255,255,.88); text-decoration: underline; }
+
+    /* ===== STICKY MOBILE CTA BAR ===== */
+    .mobile-sticky-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #FFFFFF;
+      border-top: 2px solid rgba(2, 132, 199, .3);
+      padding: 10px 14px;
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      box-shadow: 0 -4px 20px rgba(10, 37, 64, .14);
+      z-index: 9990;
+      transform: translateY(100%);
+      transition: transform .3s ease;
+    }
+    .mobile-sticky-bar.visible { transform: translateY(0); }
+    @media (min-width: 768px) {
+      .mobile-sticky-bar { display: none !important; }
+    }
+    .sticky-price-info { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
+    .sticky-price-label { font-size: .68rem; font-weight: 700; color: var(--texto-muted); text-transform: uppercase; }
+    .sticky-price-val { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 800; color: var(--navy); }
+    .sticky-btn {
+      background: linear-gradient(180deg, var(--verde-top) 0%, var(--verde) 100%);
+      color: #FFFFFF;
+      font-weight: 800; font-size: .82rem;
+      padding: 12px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      border-bottom: 3px solid var(--verde-borda);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ===== WHATSAPP FLOATING BUTTON ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 78px; right: 16px;
+      background-color: #25D366;
+      color: white;
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .24);
+      z-index: 9999;
+      transition: transform .3s ease;
+    }
+    @media (min-width: 768px) {
+      .whatsapp-float { bottom: 24px; right: 24px; width: 60px; height: 60px; }
+    }
+    .whatsapp-float svg { width: 32px; height: 32px; fill: currentColor; }
+    .whatsapp-float:hover { transform: scale(1.08); color: white; }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-ice-500 selection:text-white pb-20 md:pb-0">
+<body>
 
-  <!-- TOP URGENCY BAR -->
-  <div class="bg-navy-900 text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium tracking-wide border-b border-ice-900">
-    <span class="inline-flex items-center gap-1.5">
-      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-      <span><strong class="text-ice-400">ATENÇÃO DONOS DE SPLIT:</strong> Não pague R$ 250+ para técnico neste verão</span>
-    </span>
-  </div>
+<div class="top-bar">
+  ❄️ <strong>Protocolo Ar Gelado™</strong> · Método caseiro seguro para qualquer marca de Ar-Condicionado Split
+</div>
 
-  <!-- HERO SECTION (1ª DOBRA COM VÍDEO DO APP E SEM PREÇO NO BOTÃO) -->
-  <header class="relative overflow-hidden bg-gradient-to-b from-ice-50 via-white to-slate-50 bg-grid-pattern pt-7 pb-14 sm:pt-12 sm:pb-20 border-b border-slate-200/80">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-      
-      <!-- Pill Badge -->
-      <div class="inline-flex items-center gap-2 bg-white border border-ice-200 shadow-sm rounded-full px-3.5 py-1.5 mb-4">
-        <svg class="w-4 h-4 text-ice-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
-        </svg>
-        <span class="text-xs font-bold uppercase tracking-wider text-ice-900">Método Blindagem Seca™ • Zero Risco Elétrico</span>
-      </div>
-
-      <!-- Main Headline -->
-      <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-navy-900 leading-[1.15] tracking-tight mb-4">
-        Deixe Seu Ar-Condicionado <span class="text-ice-600 underline decoration-ice-200 decoration-4 underline-offset-4">Gelando Como Novo</span> em 20 Minutos — Sem Chamar Técnico
-      </h1>
-
-      <!-- Subheadline -->
-      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-7">
-        Use apenas um <strong>borrifador, pincel e saco de lixo de 100L</strong> para remover a crosta de lodo oculta na turbina, acabar com o pinga-pinga e baixar sua conta de luz — <strong>sem tirar o aparelho da parede.</strong>
-      </p>
-
-      <!-- APP DEMO VIDEO RIGHT IN THE FIRST FOLD -->
-      <div class="mb-7">
-        <p class="text-xs font-extrabold uppercase tracking-wider text-ice-700 mb-3">
-          📱 Veja por dentro do Guia Interativo que você abre no celular:
-        </p>
-
-        <div class="mx-auto w-[255px] sm:w-[285px] bg-navy-900 rounded-[2.4rem] p-2.5 shadow-2xl border-[3px] border-slate-800 relative">
-          <div class="w-16 h-1 bg-slate-700 rounded-full mx-auto mb-2 mt-0.5"></div>
-
-          <div class="relative w-full aspect-[9/18.2] rounded-[1.8rem] overflow-hidden bg-navy-900">
-            <!-- Camada visual de fundo enquanto o vídeo inicia -->
-            <div class="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy-800 to-slate-900 flex flex-col items-center justify-center p-5 text-white text-center">
-              <div class="w-12 h-12 rounded-2xl bg-ice-500/20 border border-ice-400/40 flex items-center justify-center text-2xl mb-3">❄️</div>
-              <span class="text-[11px] font-bold uppercase tracking-wider text-ice-400">Protocolo Ar Gelado™</span>
-              <p class="font-display font-extrabold text-base mt-1">Guia Interativo • 20 Min</p>
-              <div class="mt-4 w-full bg-red-500/20 border border-red-400/40 rounded-xl p-2.5 text-[11px] text-red-200 font-semibold">
-                ⚡ PASSO ZERO: Trava de Segurança do Disjuntor
-              </div>
-              <div class="mt-2 w-full bg-emerald-500/20 border border-emerald-400/40 rounded-xl p-2.5 text-[11px] text-emerald-200 font-semibold">
-                ✓ Cronômetro + Mapa de Placas + Calculadoras
-              </div>
-            </div>
-
-            <!-- Vídeo em loop contínuo -->
-            <video
-              id="demo-video"
-              class="relative z-10 w-full h-full object-cover object-top pointer-events-none"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="auto"
-            >
-              <source src="./video_1.mp4" type="video/mp4" />
-              <source src="/video_1.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
-      </div>
-
-      <!-- PRIMARY HERO CTA (SEM PREÇO — LEVANDO PARA A OFERTA) -->
-      <div class="max-w-md mx-auto">
-        <a href="#oferta" class="btn-pulse block w-full bg-emerald-600 hover:bg-emerald-500 text-white font-display font-extrabold text-base sm:text-lg py-4 px-6 rounded-xl transition-all shadow-lg">
-          QUERO LIMPAR MEU AR EM CASA →
-        </a>
-        <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mt-3 text-xs text-slate-500 font-medium">
-          <span class="flex items-center gap-1">⚡ Acesso imediato no celular</span>
-          <span class="flex items-center gap-1">❄️ Qualquer marca de Split</span>
-          <span class="flex items-center gap-1">🛡️ Garantia de 7 dias</span>
-        </div>
-      </div>
-
+<!-- =========================================================
+     HERO SECTION (ESPELHADA COM OS ANÚNCIOS + POCKET VSL)
+     ========================================================= -->
+<section class="hero" id="hero-top">
+  <div class="hero-inner fade-up">
+    <div class="hero-badge">
+      ❄️ Sem desinstalar da parede · Sem técnico
     </div>
-  </header>
 
-  <!-- SECTION 1: SYMPTOMS & THE GAS MYTH -->
-  <section class="py-14 sm:py-20 bg-white border-b border-slate-200/70">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      
-      <div class="text-center mb-10">
-        <span class="text-xs font-bold uppercase tracking-widest text-ice-600">Diagnóstico Rápido</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-navy-900 mt-1">
-          Seu ar-condicionado está dando algum destes 4 sinais?
-        </h2>
-      </div>
+    <h1>
+      Limpe seu Ar-Condicionado Split em casa em <span>20 minutos</span>, economize até R$&nbsp;250 e faça ele gelar como novo
+    </h1>
 
-      <div class="grid sm:grid-cols-2 gap-4 mb-10">
-        <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-5 flex items-start gap-3.5">
-          <div class="w-9 h-9 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold shrink-0 mt-0.5">1</div>
-          <div>
-            <h3 class="font-bold text-navy-900 text-base">No 16°C mas não gela o quarto</h3>
-            <p class="text-sm text-slate-600 mt-1">O vento sai fraco, sem pressão, e você precisa ligar um ventilador junto para conseguir dormir.</p>
-          </div>
-        </div>
-
-        <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-5 flex items-start gap-3.5">
-          <div class="w-9 h-9 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold shrink-0 mt-0.5">2</div>
-          <div>
-            <h3 class="font-bold text-navy-900 text-base">Cheiro de mofo ou "cachorro molhado"</h3>
-            <p class="text-sm text-slate-600 mt-1">Nos primeiros minutos após ligar, o aparelho joga um odor azedo e bactérias direto no seu nariz.</p>
-          </div>
-        </div>
-
-        <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-5 flex items-start gap-3.5">
-          <div class="w-9 h-9 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold shrink-0 mt-0.5">3</div>
-          <div>
-            <h3 class="font-bold text-navy-900 text-base">Pinga-pinga escorrendo na parede</h3>
-            <p class="text-sm text-slate-600 mt-1">A bandeja interna entope com uma gosma gelatinosa de poeira e começa a vazar água dentro de casa.</p>
-          </div>
-        </div>
-
-        <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-5 flex items-start gap-3.5">
-          <div class="w-9 h-9 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold shrink-0 mt-0.5">4</div>
-          <div>
-            <h3 class="font-bold text-navy-900 text-base">Conta de luz disparando no verão</h3>
-            <p class="text-sm text-slate-600 mt-1">Sufocado pela sujeira, o motor externo nunca desarma e consome até 35% mais energia elétrica.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Truth Callout Box -->
-      <div class="bg-amber-50 border-l-4 border-amber-500 rounded-r-xl p-6 shadow-sm">
-        <h3 class="font-display font-extrabold text-lg text-amber-950 mb-2">
-          🚨 A verdade que ninguém te conta: o problema NÃO é falta de gás!
-        </h3>
-        <p class="text-sm sm:text-base text-amber-900/90 leading-relaxed">
-          Quando o ar para de gelar, a desculpa clássica de muitos técnicos é dizer que <em>"precisa completar o gás"</em> para cobrar <strong>R$ 350 ou R$ 400</strong> na visita. Mas o gás trabalha em circuito selado — ele não evapora sozinho. Em 90% dos casos, o único vilão é a <strong>crosta de lodo grudada no rolo da turbina interna</strong>, um lugar que lavar apenas as telinhas (filtros) nunca limpa.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION 2: THE MECHANISM (MÉTODO BLINDAGEM SECA) -->
-  <section class="py-14 sm:py-20 bg-slate-50 border-b border-slate-200/70">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-bold uppercase tracking-widest text-ice-600">Segurança Total</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-navy-900 mt-1">
-          Como Funciona o Método Blindagem Seca™
-        </h2>
-        <p class="text-sm sm:text-base text-slate-600 mt-2">
-          Esqueça máquinas de pressão caras ou bolsas coletoras de R$ 180. Desenvolvemos um passo a passo seguro com itens que você já tem na cozinha:
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- Step 1 -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/90 relative">
-          <span class="inline-block bg-ice-100 text-ice-700 font-display font-extrabold text-xs px-3 py-1 rounded-full mb-4">
-            PASSO 1 • 2 MINUTOS
-          </span>
-          <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Blindagem da Placa</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Mostramos com fotos exatas onde fica a caixa eletrônica de cada marca e como vedá-la com plástico e fita crepe. <strong>Zero chance de respingo ou curto.</strong>
-          </p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/90 relative">
-          <span class="inline-block bg-ice-100 text-ice-700 font-display font-extrabold text-xs px-3 py-1 rounded-full mb-4">
-            PASSO 2 • 3 MINUTOS
-          </span>
-          <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Calha com Saco de 100L</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Você prende um saco de lixo reforçado comum formando um funil direto para um balde. <strong>Não molha sua parede, nem a cama, nem o piso.</strong>
-          </p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/90 relative">
-          <span class="inline-block bg-ice-100 text-ice-700 font-display font-extrabold text-xs px-3 py-1 rounded-full mb-4">
-            PASSO 3 • 15 MINUTOS
-          </span>
-          <h3 class="font-display font-bold text-lg text-navy-900 mb-2">Banho na Turbina & Dreno</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Com um borrifador e um pincel macio, você dissolve o lodo da turbina e desentope o dreno em 60 segundos. <strong>A água preta sai toda no balde.</strong>
-          </p>
-        </div>
-      </div>
-
-      <!-- Compatibility Brands Bar -->
-      <div class="mt-10 bg-white border border-slate-200 rounded-xl p-5 text-center">
-        <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">
-          100% Compatível com Modelos Convencionais e Inverter (9.000 a 30.000 BTUs):
-        </p>
-        <div class="flex flex-wrap justify-center gap-2 sm:gap-3">
-          <span class="px-3 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-md">LG Dual Inverter</span>
-          <span class="px-3 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-md">Samsung WindFree</span>
-          <span class="px-3 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-md">Midea / Springer</span>
-          <span class="px-3 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-md">Consul</span>
-          <span class="px-3 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-md">Gree</span>
-          <span class="px-3 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-md">Electrolux</span>
-          <span class="px-3 py-1 bg-slate-100 text-slate-700 font-bold text-xs rounded-md">Elgin / Agratto</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION 3: PROVA REAL + 3 DEPOIMENTOS DE CLIENTES -->
-  <section id="depoimentos" class="py-14 sm:py-20 bg-white border-b border-slate-200/70">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600">Resultados Reais em Casa</span>
-        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-navy-900 mt-1">
-          Quem Aplicou o Método em 20 Minutos Aprovou
-        </h2>
-        <p class="text-sm sm:text-base text-slate-600 mt-2">
-          Veja o antes e depois da turbina por dentro e o relato de quem economizou centenas de reais sem chamar técnico:
-        </p>
-      </div>
-
-      <!-- FOTO REAL DE ANTES E DEPOIS ENVIADA POR CLIENTE -->
-      <div class="max-w-md mx-auto mb-10 bg-slate-900 rounded-2xl overflow-hidden shadow-xl border border-slate-200">
-        <img
-          src="./antes-depois-turbina.jpg"
-          alt="Resultado real antes e depois da limpeza da turbina do ar-condicionado Split"
-          class="w-full h-auto object-cover block"
-          onerror="this.parentElement.style.display='none'"
-        />
-        <div class="bg-navy-900 text-white px-4 py-3 text-center">
-          <p class="text-xs font-bold text-emerald-400 uppercase tracking-wider">📸 Resultado real enviado por aluno</p>
-          <p class="text-xs text-slate-300 mt-0.5">Crosta removida do rolo da turbina em 20 minutos usando apenas borrifador, pincel e saco de 100L.</p>
-        </div>
-      </div>
-
-      <!-- 3 DEPOIMENTOS ESCRITOS BEM ELABORADOS -->
-      <div class="grid md:grid-cols-3 gap-5">
-        
-        <!-- Depoimento 1: Quebra o mito do gás e economia -->
-        <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <div class="text-amber-400 text-sm tracking-tight">★★★★★</div>
-              <span class="text-[11px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Compra Verificada</span>
-            </div>
-            <p class="text-sm text-slate-700 leading-relaxed">
-              "Meu <strong>LG Dual Inverter</strong> estava no 16°C e parecia só ventilador. Um técnico veio aqui e queria cobrar <strong>R$ 320 dizendo que precisava completar o gás</strong>. Comprei o guia, abri a tampa e a turbina estava igualzinha à foto acima, cheia de lodo. Fiz a limpeza em 22 minutos e voltou a gelar trincando!"
-            </p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-ice-600 text-white font-display font-bold text-xs flex items-center justify-center shrink-0">
-              RA
-            </div>
-            <div>
-              <p class="font-bold text-navy-900 text-xs">Ricardo Almeida</p>
-              <p class="text-[11px] text-slate-500">Campinas, SP • LG Dual Inverter 12.000 BTUs</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Depoimento 2: Quebra o medo de queimar a placa / molhar a cama -->
-        <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <div class="text-amber-400 text-sm tracking-tight">★★★★★</div>
-              <span class="text-[11px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Compra Verificada</span>
-            </div>
-            <p class="text-sm text-slate-700 leading-relaxed">
-              "Eu morria de medo de jogar água no ar-condicionado que fica bem em cima da minha cama e queimar a placa. O <strong>Mapa de Placas</strong> mostrou certinho onde vedar no meu <strong>Samsung WindFree</strong> e o truque do saco de lixo de 100L escorreu toda a água preta direto no balde, <strong>sem cair uma gota no colchão</strong>."
-            </p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-emerald-600 text-white font-display font-bold text-xs flex items-center justify-center shrink-0">
-              MC
-            </div>
-            <div>
-              <p class="font-bold text-navy-900 text-xs">Mariana Costa</p>
-              <p class="text-[11px] text-slate-500">Belo Horizonte, MG • Samsung WindFree 9.000 BTUs</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Depoimento 3: Pinga-pinga + cheiro de mofo + conta de luz -->
-        <div class="bg-slate-50 border border-slate-200/90 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <div class="text-amber-400 text-sm tracking-tight">★★★★★</div>
-              <span class="text-[11px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Compra Verificada</span>
-            </div>
-            <p class="text-sm text-slate-700 leading-relaxed">
-              "Aqui em casa são 3 aparelhos e dois estavam <strong>pingando na parede e com cheiro forte de mofo</strong> toda vez que ligava. Sempre lavei as telinhas, mas nunca tinha limpado o rolo por dentro. Apliquei o passo a passo nos 3 aparelhos numa tarde, parou o vazamento na hora e já economizei <strong>R$ 750 de técnico</strong>."
-            </p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center gap-3">
-            <div class="w-9 h-9 rounded-full bg-navy-900 text-white font-display font-bold text-xs flex items-center justify-center shrink-0">
-              CM
-            </div>
-            <div>
-              <p class="font-bold text-navy-900 text-xs">Carlos Eduardo Mendes</p>
-              <p class="text-[11px] text-slate-500">Curitiba, PR • 3 Splits Midea / Consul</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 4: INTERACTIVE SAVINGS CALCULATOR -->
-  <section class="py-14 sm:py-20 bg-slate-50 border-b border-slate-200/70">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <div class="bg-navy-900 text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-ice-900">
-        <div class="text-center mb-8">
-          <span class="text-xs font-bold uppercase tracking-widest text-ice-400">Faça a Conta Agora</span>
-          <h2 class="font-display text-2xl sm:text-3xl font-extrabold mt-1">
-            Quanto Você Vai Economizar Esse Ano?
-          </h2>
-          <p class="text-sm text-slate-300 mt-1">Arraste a barra abaixo conforme a quantidade de aparelhos na sua casa:</p>
-        </div>
-
-        <!-- Slider Control -->
-        <div class="mb-8 bg-navy-800/80 p-5 rounded-2xl border border-white/10">
-          <div class="flex justify-between items-center mb-3">
-            <span class="text-sm font-semibold text-slate-200">Aparelhos Split em casa:</span>
-            <span id="ac-count-label" class="font-display text-2xl font-extrabold text-ice-400">2 aparelhos</span>
-          </div>
-          <input id="ac-slider" type="range" min="1" max="5" value="2" class="w-full h-2.5 bg-slate-700 rounded-lg appearance-none cursor-pointer">
-          <div class="flex justify-between text-xs text-slate-400 mt-2 font-medium">
-            <span>1 Split</span>
-            <span>2 Splits</span>
-            <span>3 Splits</span>
-            <span>4 Splits</span>
-            <span>5+ Splits</span>
-          </div>
-        </div>
-
-        <!-- Calculated Results Grid -->
-        <div class="grid sm:grid-cols-3 gap-4 text-center mb-6">
-          <div class="bg-white/5 border border-white/10 rounded-xl p-4">
-            <span class="text-xs text-slate-400 block">Gasto com Técnico (2x/ano)</span>
-            <span id="tech-cost" class="font-display text-xl font-extrabold text-red-400 line-through mt-1 block">R$ 1.000</span>
-          </div>
-          <div class="bg-white/5 border border-white/10 rounded-xl p-4">
-            <span class="text-xs text-slate-400 block">Economia na Conta de Luz</span>
-            <span id="energy-save" class="font-display text-xl font-extrabold text-ice-300 mt-1 block">+ R$ 640/ano</span>
-          </div>
-          <div class="bg-emerald-500/20 border border-emerald-400/40 rounded-xl p-4">
-            <span class="text-xs text-emerald-200 font-semibold block">Sua Economia Total</span>
-            <span id="total-save" class="font-display text-2xl font-extrabold text-emerald-400 mt-1 block">R$ 1.603</span>
-          </div>
-        </div>
-
-        <p class="text-center text-xs text-slate-400">
-          *Baseado na média nacional de R$ 250 por higienização técnica semestral + redução média de 22% no consumo após limpeza da turbina.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 5: DELIVERABLES & PRICING BOX -->
-  <section id="oferta" class="py-16 sm:py-24 bg-gradient-to-b from-white to-ice-50/70">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      
-      <div class="bg-white rounded-3xl shadow-2xl border-2 border-ice-500 overflow-hidden">
-        <!-- Card Header -->
-        <div class="bg-navy-900 text-white text-center py-6 px-6">
-          <span class="inline-block bg-emerald-500 text-navy-950 font-extrabold text-xs uppercase tracking-wider px-3 py-1 rounded-full mb-2">
-            Acesso Imediato + Vitalício
-          </span>
-          <h2 class="font-display text-2xl sm:text-3xl font-extrabold">
-            Protocolo Ar Gelado™ Completo
-          </h2>
-          <p class="text-sm text-slate-300 mt-1">Tudo o que você precisa para limpar todos os aparelhos da sua casa hoje</p>
-        </div>
-
-        <!-- Deliverables List -->
-        <div class="p-6 sm:p-10">
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-start gap-3">
-              <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">✓</span>
-              <div>
-                <strong class="text-navy-900">App Interativo Passo a Passo — Método Blindagem Seca™:</strong>
-                <span class="text-slate-600 text-sm block">Cronômetro de 20 minutos, trava de segurança do disjuntor e instruções ilustradas para abrir, isolar, lavar a turbina e fechar seu Split sem ferramentas caras.</span>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">✓</span>
-              <div>
-                <strong class="text-navy-900">Mapa de Placas Eletrônicas por Marca:</strong>
-                <span class="text-slate-600 text-sm block">Localização exata da caixa elétrica nos modelos LG, Samsung, Midea, Consul, Gree, Electrolux e Elgin.</span>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">✓</span>
-              <div>
-                <strong class="text-navy-900">Guia Anti-Pinga (Desentupimento de Dreno em 60s):</strong>
-                <span class="text-slate-600 text-sm block">Como acabar definitivamente com o vazamento de água na parede sem chamar técnico.</span>
-              </div>
-            </li>
-            <li class="flex items-start gap-3 bg-ice-50/80 p-3.5 rounded-xl border border-ice-200/70">
-              <span class="w-6 h-6 rounded-full bg-ice-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">🎁</span>
-              <div>
-                <strong class="text-ice-900">BÔNUS 1 — Receita da Solução Desengordurante Caseira:</strong>
-                <span class="text-slate-600 text-sm block">Fórmula de centavos que elimina fungos e ácaros sem corroer o alumínio da serpentina.</span>
-              </div>
-            </li>
-            <li class="flex items-start gap-3 bg-ice-50/80 p-3.5 rounded-xl border border-ice-200/70">
-              <span class="w-6 h-6 rounded-full bg-ice-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">🎁</span>
-              <div>
-                <strong class="text-ice-900">BÔNUS 2 — Checklist de Economia no Controle Remoto:</strong>
-                <span class="text-slate-600 text-sm block">Os 4 ajustes exatos de temperatura e modo que cortam até 30% do gasto de energia no verão.</span>
-              </div>
-            </li>
-          </ul>
-
-          <!-- Price Anchor -->
-          <div class="text-center bg-slate-50 rounded-2xl p-6 border border-slate-200 mb-6">
-            <p class="text-sm text-slate-500 font-medium">
-              Valor normal: <span class="line-through text-red-500 font-bold">R$ 97,00</span>
-            </p>
-            <div class="my-2">
-              <span class="text-sm font-bold text-slate-600 block">Por apenas:</span>
-              <span class="font-display text-5xl sm:text-6xl font-extrabold text-navy-900 tracking-tight">
-                R$ 37<span class="text-2xl sm:text-3xl">,00</span>
-              </span>
-              <span class="block text-xs font-semibold text-emerald-700 mt-1">
-                Pagamento único • Sem mensalidades • Use quantas vezes quiser
-              </span>
-            </div>
-
-            <!-- Main Checkout Button -->
-            <button type="button" onclick="goToCheckout()" class="btn-pulse w-full mt-4 bg-emerald-600 hover:bg-emerald-500 text-white font-display font-extrabold text-lg sm:text-xl py-4 px-6 rounded-xl transition-all shadow-xl cursor-pointer">
-              LIBERAR MEU ACESSO AGORA →
-            </button>
-
-            <div class="flex items-center justify-center gap-4 mt-4 text-xs text-slate-500">
-              <span>🔒 Compra 100% Segura</span>
-              <span>⚡ Envio no WhatsApp e E-mail</span>
-              <span>💳 Pix ou Cartão</span>
-            </div>
-          </div>
-
-          <!-- 7-Day Guarantee -->
-          <div class="flex flex-col sm:flex-row items-center gap-4 bg-emerald-50/70 border border-emerald-200 rounded-2xl p-5 text-center sm:text-left">
-            <div class="w-14 h-14 rounded-full bg-emerald-600 text-white font-display font-extrabold text-xl flex items-center justify-center shrink-0 shadow">
-              7D
-            </div>
-            <div>
-              <h4 class="font-display font-bold text-navy-900 text-base">Risco Zero: Garantia Incondicional de 7 Dias</h4>
-              <p class="text-xs sm:text-sm text-slate-600 mt-0.5 leading-relaxed">
-                Acesse o guia hoje mesmo. Se você achar difícil, inseguro ou não ficar 100% satisfeito por qualquer motivo, devolvemos cada centavo dos seus R$ 37 sem burocracia.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION 6: FAQ ACCORDION -->
-  <section class="py-14 bg-white border-t border-slate-200/80">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-navy-900 text-center mb-8">
-        Dúvidas Frequentes
-      </h2>
-
-      <div class="space-y-3" id="faq-list">
-        <div class="border border-slate-200 rounded-xl overflow-hidden">
-          <button type="button" class="faq-btn w-full flex justify-between items-center p-4 sm:p-5 text-left font-bold text-navy-900 bg-slate-50 hover:bg-slate-100 transition">
-            <span>Preciso tirar o ar-condicionado da parede?</span>
-            <span class="faq-icon text-ice-600 font-extrabold text-xl">+</span>
-          </button>
-          <div class="faq-content hidden p-4 sm:p-5 text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
-            Não! Todo o procedimento é feito com o aparelho instalado na parede, sem mexer na tubulação de cobre nem no gás.
-          </div>
-        </div>
-
-        <div class="border border-slate-200 rounded-xl overflow-hidden">
-          <button type="button" class="faq-btn w-full flex justify-between items-center p-4 sm:p-5 text-left font-bold text-navy-900 bg-slate-50 hover:bg-slate-100 transition">
-            <span>Tem algum risco de queimar a placa eletrônica?</span>
-            <span class="faq-icon text-ice-600 font-extrabold text-xl">+</span>
-          </button>
-          <div class="faq-content hidden p-4 sm:p-5 text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
-            Nenhum. O primeiro passo do protocolo é desligar o disjuntor e aplicar a Blindagem Seca™ (isolamento completo do módulo eletrônico com plástico e fita crepe) antes de usar qualquer gota de água.
-          </div>
-        </div>
-
-        <div class="border border-slate-200 rounded-xl overflow-hidden">
-          <button type="button" class="faq-btn w-full flex justify-between items-center p-4 sm:p-5 text-left font-bold text-navy-900 bg-slate-50 hover:bg-slate-100 transition">
-            <span>Como recebo o acesso após o pagamento?</span>
-            <span class="faq-icon text-ice-600 font-extrabold text-xl">+</span>
-          </button>
-          <div class="faq-content hidden p-4 sm:p-5 text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
-            Assim que o pagamento é confirmado (na hora no Pix ou Cartão), você recebe o link de acesso imediato no seu WhatsApp e no seu e-mail para abrir direto no celular.
-          </div>
-        </div>
-
-        <div class="border border-slate-200 rounded-xl overflow-hidden">
-          <button type="button" class="faq-btn w-full flex justify-between items-center p-4 sm:p-5 text-left font-bold text-navy-900 bg-slate-50 hover:bg-slate-100 transition">
-            <span>Perde a garantia de fábrica do aparelho?</span>
-            <span class="faq-icon text-ice-600 font-extrabold text-xl">+</span>
-          </button>
-          <div class="faq-content hidden p-4 sm:p-5 text-sm text-slate-600 bg-white border-t border-slate-100 leading-relaxed">
-            Não. Você não corta fios, não rompe lacres técnicos e não altera nenhuma peça interna — realiza apenas a higienização preventiva da turbina e serpentina.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-navy-900 text-slate-400 py-8 text-center text-xs px-4">
-    <p class="font-semibold text-slate-300">Protocolo Ar Gelado™ — Todos os direitos reservados.</p>
-    <p class="mt-2 max-w-xl mx-auto text-slate-500">
-      Este site não tem vínculo com o Facebook ou Meta Platforms, Inc. Siga sempre as instruções de desligamento do disjuntor indicadas no guia antes de iniciar a limpeza.
+    <p class="hero-sub">
+      Assista ao vídeo rápido abaixo e veja como higienizar a turbina e a serpentina sem molhar a parede e com <strong>proteção total da placa eletrônica</strong>.
     </p>
-  </footer>
 
-  <!-- STICKY MOBILE CTA BAR (APARECE APÓS O VÍDEO E VAI DIRETO PRO CHECKOUT COM UTMs) -->
-  <div id="sticky-bar" class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] z-40 transform translate-y-full transition-transform duration-300 md:hidden">
-    <div class="flex items-center justify-between gap-3 max-w-lg mx-auto">
-      <div>
-        <span class="text-[11px] text-slate-500 line-through block leading-none">De R$ 97,00</span>
-        <span class="font-display font-extrabold text-lg text-navy-900">R$ 37,00</span>
+    <!-- POCKET VSL – YouTube Vertical (9:16) -->
+    <div class="vsl-wrapper">
+      <div class="vsl-ratio">
+        <iframe
+          id="vsl-iframe"
+          src="https://www.youtube.com/embed/SEU_ID_DO_YOUTUBE_AQUI?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&playsinline=1&controls=1&iv_load_policy=3&playlist=SEU_ID_DO_YOUTUBE_AQUI&enablejsapi=1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          title="Protocolo Ar Gelado – Vídeo Explicativo"
+        ></iframe>
+
+        <!-- BOTÃO DE ATIVAR O SOM -->
+        <div class="vsl-unmute-overlay" id="vsl-unmute-overlay" onclick="desmutarVideo()">
+          <button class="vsl-unmute-btn" id="vsl-unmute-btn" type="button" aria-label="Ligar o som do vídeo">
+            <span class="vsl-unmute-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+              </svg>
+            </span>
+            <span class="vsl-unmute-content">
+              <span class="vsl-unmute-alert">🔊 SEU VÍDEO JÁ COMEÇOU</span>
+              <span class="vsl-unmute-title">TOQUE PARA OUVIR</span>
+              <span class="vsl-unmute-sub">Ver como proteger a placa e limpar</span>
+            </span>
+          </button>
+        </div>
       </div>
-      <button type="button" onclick="goToCheckout()" class="flex-1 text-center bg-emerald-600 hover:bg-emerald-500 text-white font-display font-extrabold text-sm py-3 px-4 rounded-xl shadow cursor-pointer">
-        LIMPAR MEU AR AGORA →
-      </button>
+    </div>
+
+    <!-- FAIXA DE PROVA RÁPIDA (QUEBRA AS 3 OBJEÇÕES IMEDIATAMENTE) -->
+    <div class="hero-proof-strip">
+      <div class="proof-pill">
+        <span class="proof-pill-top">Tempo médio</span>
+        <span class="proof-pill-main">20 Minutos</span>
+      </div>
+      <div class="proof-pill">
+        <span class="proof-pill-top">Economia</span>
+        <span class="proof-pill-main">Até R$ 250</span>
+      </div>
+      <div class="proof-pill">
+        <span class="proof-pill-top">Segurança</span>
+        <span class="proof-pill-main">Placa Isolada</span>
+      </div>
+    </div>
+
+    <!-- CTA ABAIXO DO VÍDEO -->
+    <div id="cta-hero-wrapper">
+      <a href="https://pay.cakto.com.br/337ai2h_1347449" target="_blank" class="btn-cta" id="cta-hero">
+        QUERO O PROTOCOLO AR GELADO POR R$&nbsp;37
+        <span class="btn-cta-sub">Pagamento único · Acesso imediato no WhatsApp e E-mail</span>
+      </a>
+      <small class="cta-note">🔒 Compra 100% segura · Garantia incondicional de 7 dias</small>
     </div>
   </div>
+</section>
 
-  <!-- INTERACTIVE SCRIPTS -->
-  <script>
-    // 1. Captura, Persistência e Repasse Completo de UTMs + fbclid + sck (Cakto)
-    (function initUtmTracker() {
-      const STORAGE_KEY = 'pag_tracking_params_v1';
-      const TRACKED_KEYS = [
-        'utm_source',
-        'utm_medium',
-        'utm_campaign',
-        'utm_content',
-        'utm_term',
-        'fbclid',
-        'gclid',
-        'src',
-        'sck'
-      ];
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <span>
+    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+    Placa Eletrônica 100% Protegida
+  </span>
+  <span>
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+    Sem Ferramentas Caras
+  </span>
+  <span>
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10z"/></svg>
+    Acesso Imediato no WhatsApp
+  </span>
+</div>
 
-      let savedParams = {};
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY) || sessionStorage.getItem(STORAGE_KEY);
-        if (raw) savedParams = JSON.parse(raw);
-      } catch (e) {}
+<!-- =========================================================
+     SEÇÃO 2 – POR QUE LAVAR SÓ A TELINHA NÃO RESOLVE
+     ========================================================= -->
+<section class="section">
+  <div class="container text-center">
+    <span class="section-label">O que ninguém te conta</span>
+    <h2 class="section-title">Por que o seu ar-condicionado para de gelar mesmo com o filtro limpo?</h2>
+    <p class="section-desc">
+      Lavar apenas a tela superior remove só o pó grosso. A sujeira que realmente trava o aparelho fica escondida lá dentro:
+    </p>
 
-      const urlParams = new URLSearchParams(window.location.search);
-      let hasNewParams = false;
+    <div class="alert-grid">
+      <div class="alert-card">
+        <span class="alert-tag">Sintoma 1 · Vento Fraco</span>
+        <h3>Turbina Encrostada de Lodo</h3>
+        <p>O rolo interno acumula poeira úmida e fungos que bloqueiam a passagem do ar gelado, fazendo o aparelho ventilar fraco mesmo no 16°C.</p>
+      </div>
+      <div class="alert-card">
+        <span class="alert-tag">Sintoma 2 · Conta Alta</span>
+        <h3>Compressor Trabalhando no Dobro</h3>
+        <p>Com a serpentina bloqueada, o sensor não atinge a temperatura desejada e o motor fica ligado sem parar — pesando direto na conta de luz.</p>
+      </div>
+      <div class="alert-card">
+        <span class="alert-tag">Sintoma 3 · Pinga-Pinga e Odor</span>
+        <h3>Bandeja e Dreno Entupidos</h3>
+        <p>A gosma acumulada entope a saída de água e gera aquele cheiro de mofo/cachorro molhado toda vez que você liga o split no quarto ou na sala.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      urlParams.forEach((value, key) => {
-        if (value && value.trim() !== '') {
-          savedParams[key] = value.trim();
-          hasNewParams = true;
-        }
-      });
+<!-- =========================================================
+     SEÇÃO 3 – SEGURANÇA EM 3 ETAPAS (MATA O MEDO DE ESTRAGAR)
+     ========================================================= -->
+<section class="section steps-section">
+  <div class="container text-center">
+    <span class="section-label">Método passo a passo</span>
+    <h2 class="section-title">Como limpar sem desinstalar e sem risco de queimar nada</h2>
+    <p class="section-desc">
+      O Protocolo Ar Gelado™ foi desenhado para qualquer pessoa aplicar em casa usando itens simples e baratos:
+    </p>
 
-      TRACKED_KEYS.forEach((key) => {
-        const val = urlParams.get(key);
-        if (val && val.trim() !== '') {
-          savedParams[key] = val.trim();
-          hasNewParams = true;
-        }
-      });
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Isolamento Total da Parte Elétrica</h3>
+        <p>Você aprende exatamente onde fica a placa eletrônica do seu modelo e como blindar o compartimento antes de aplicar qualquer gota de água.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Coleta Direta no Balde (Zero Sujeira)</h3>
+        <p>Mostramos como montar uma guia simples com plástico comum para toda a água escura escorrer direto para o balde, mantendo sua parede seca.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Limpeza Segura de Alumínio e Turbina</h3>
+        <p>A lista exata de produtos de mercado que soltam o lodo pesado sem corroer a serpentina de alumínio — nada de ácidos perigosos.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      if (!savedParams.utm_source && (savedParams.fbclid || /facebook\.com|instagram\.com/i.test(document.referrer))) {
-        savedParams.utm_source = 'FB';
-        hasNewParams = true;
-      }
+<!-- =========================================================
+     SEÇÃO 4 – O QUE VOCÊ RECEBE HOJE
+     ========================================================= -->
+<section class="section deliverables-section">
+  <div class="container text-center">
+    <span class="section-label">Acesso imediato</span>
+    <h2 class="section-title">Tudo o que você recebe no Protocolo Ar Gelado™</h2>
+    <p class="section-desc">
+      Aulas curtas, diretas ao ponto, para você assistir pelo celular enquanto limpa o seu aparelho.
+    </p>
 
-      if (!savedParams.sck && (savedParams.utm_campaign || savedParams.utm_medium || savedParams.utm_content)) {
-        const sckParts = [
-          savedParams.utm_source || 'FB',
-          savedParams.utm_campaign || '',
-          savedParams.utm_medium || '',
-          savedParams.utm_content || ''
-        ].filter(Boolean);
-        if (sckParts.length > 0) {
-          savedParams.sck = sckParts.join('|');
-          hasNewParams = true;
-        }
-      }
+    <div class="benefit-grid">
+      <div class="benefit-item">
+        <div class="benefit-check">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <div>
+          <h3>Passo a Passo Completo em Vídeo</h3>
+          <p>Da abertura da carenagem até o fechamento final, explicado de forma simples para iniciantes.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <div>
+          <h3>Guia de Blindagem da Placa Eletrônica</h3>
+          <p>O protocolo exato de segurança para evitar umidade nos componentes elétricos e sensores.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <div>
+          <h3>Lista de Produtos Seguros e Baratos</h3>
+          <p>O que comprar no mercado gastando menos de R$ 20 sem danificar as aletas de alumínio.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-check">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <div>
+          <h3>Desentupimento de Dreno e Bandeja</h3>
+          <p>Como eliminar o vazamento de água dentro do quarto e acabar com o mau cheiro na hora.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      if (hasNewParams) {
-        try {
-          const serialized = JSON.stringify(savedParams);
-          localStorage.setItem(STORAGE_KEY, serialized);
-          sessionStorage.setItem(STORAGE_KEY, serialized);
-        } catch (e) {}
-      }
+<!-- =========================================================
+     SEÇÃO 5 – COMPARATIVO E OFERTA
+     ========================================================= -->
+<section class="section price-section" id="oferta">
+  <div class="container text-center">
+    <span class="section-label">Faça as contas</span>
+    <h2 class="section-title">Na primeira limpeza o protocolo já se paga 6 vezes</h2>
 
-      window.buildCheckoutUrlWithUtms = function(baseUrl) {
-        try {
-          const finalUrl = new URL(baseUrl);
-          Object.keys(savedParams).forEach((key) => {
-            if (savedParams[key] && !finalUrl.searchParams.has(key)) {
-              finalUrl.searchParams.set(key, savedParams[key]);
+    <div class="compare-box">
+      <div class="compare-col">
+        <h4>Limpeza com Técnico</h4>
+        <div class="compare-price">R$ 200 a R$ 300</div>
+        <ul>
+          <li>❌ Cobrado <strong>por aparelho</strong></li>
+          <li>❌ Você paga de novo a cada 6 meses</li>
+          <li>❌ Precisa esperar agenda e visita em casa</li>
+        </ul>
+      </div>
+      <div class="compare-col compare-col--win">
+        <h4>Protocolo Ar Gelado™</h4>
+        <div class="compare-price">R$ 37,00 (Único)</div>
+        <ul>
+          <li>✅ Limpe <strong>quantos aparelhos quiser</strong></li>
+          <li>✅ Acesso vitalício para usar sempre que precisar</li>
+          <li>✅ Pronto em 20 minutos no seu horário</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <p class="price-old">De R$ 97,00</p>
+      <p class="price-new">R$ 37<small style="font-size:.45em; vertical-align:super;">,00</small></p>
+      <span class="price-tag">✓ Pagamento Único · Acesso Vitalício</span>
+
+      <div>
+        <a href="https://pay.cakto.com.br/337ai2h_1347449" target="_blank" class="btn-cta" id="cta-price">
+          SIM! QUERO LIMPAR MEU AR POR R$&nbsp;37
+          <span class="btn-cta-sub">Receba o acesso imediatamente no WhatsApp e E-mail</span>
+        </a>
+        <small class="cta-note" style="margin-top: 14px;">🔒 Ambiente 100% seguro · Pix ou Cartão · Liberação instantânea</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SEÇÃO 6 – GARANTIA & FAQ
+     ========================================================= -->
+<section class="section" style="background: #FFFFFF;">
+  <div class="container">
+    <div class="guarantee">
+      <div class="guarantee-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 16l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>
+      </div>
+      <div>
+        <h3>7 Dias de Garantia Incondicional</h3>
+        <p>Acesse todas as aulas e materiais agora. Se você achar que o passo a passo não é simples, seguro ou não serve para o seu aparelho, devolvemos 100% do seu dinheiro sem burocracia.</p>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-bottom: 24px;">
+      <span class="section-label">Dúvidas frequentes</span>
+      <h2 class="section-title">Perguntas Frequentes</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Serve para qualquer marca de ar-condicionado split?</button>
+        <div class="faq-a">
+          <p>Sim. O funcionamento interno da turbina, serpentina, bandeja e placa eletrônica segue o mesmo padrão em modelos LG, Samsung, Gree, Midea, Springer, Consul, Electrolux, Daikin e Elgin.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Tem risco de queimar a placa ou molhar a parede?</button>
+        <div class="faq-a">
+          <p>Não, desde que você siga a etapa inicial de isolamento mostrada no vídeo. Ensinamos como proteger a caixa elétrica antes da limpeza e como canalizar toda a água direto para um balde.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Preciso comprar bolsa coletora cara ou lavadora de pressão?</button>
+        <div class="faq-a">
+          <p>Não. O protocolo foi pensado para uso doméstico, usando borrifador comum, pincel macio e itens simples que você encontra em qualquer mercado ou já tem em casa.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Como recebo o acesso após o pagamento?</button>
+        <div class="faq-a">
+          <p>Assim que o Pix ou cartão é aprovado, você recebe o link de acesso imediato diretamente no seu WhatsApp e no seu e-mail.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top: 38px;">
+      <a href="https://pay.cakto.com.br/337ai2h_1347449" target="_blank" class="btn-cta" id="cta-footer">
+        QUERO ACESSAR O PROTOCOLO AGORA POR R$&nbsp;37
+        <span class="btn-cta-sub">Acesso imediato · 7 dias de garantia</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer>
+  <p>© 2026 Protocolo Ar Gelado™. Todos os direitos reservados.</p>
+  <p style="margin-top:8px;">
+    <a href="#">Política de Privacidade</a> &nbsp;·&nbsp; <a href="#">Termos de Uso</a>
+  </p>
+</footer>
+
+<!-- =========================================================
+     STICKY MOBILE CTA BAR
+     ========================================================= -->
+<div class="mobile-sticky-bar" id="mobile-sticky-bar">
+  <div class="sticky-price-info">
+    <span class="sticky-price-label">Protocolo Completo</span>
+    <span class="sticky-price-val">R$ 37,00</span>
+  </div>
+  <a href="https://pay.cakto.com.br/337ai2h_1347449" target="_blank" class="sticky-btn" id="cta-sticky">
+    LIBERAR ACESSO →
+  </a>
+</div>
+
+<!-- =========================================================
+     WHATSAPP FLOATING BUTTON
+     ========================================================= -->
+<a href="https://wa.me/5511914152947?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Protocolo%20Ar%20Gelado." 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Fale conosco no WhatsApp">
+  <svg viewBox="0 0 24 24">
+    <path d="M12.031 0C5.385 0 0 5.383 0 12.03c0 2.128.553 4.2 1.603 6.02L.21 23.46l5.572-1.462A11.96 11.96 0 0012.031 24c6.646 0 12.03-5.383 12.03-12.03S18.677 0 12.031 0zm5.952 17.106c-.244.685-1.417 1.282-1.946 1.343-.418.049-1.002.164-3.136-.722-2.585-1.074-4.225-3.69-4.354-3.864-.13-.173-1.04-1.385-1.04-2.643 0-1.258.654-1.878.887-2.124.232-.246.505-.308.673-.308.17 0 .338.003.486.01.161.008.377-.061.593.456.223.535.753 1.838.82 1.97.067.133.111.288.028.455-.083.167-.126.271-.253.421-.127.15-.265.33-.38.455-.126.136-.263.284-.112.545.152.261.674 1.114 1.442 1.8.991.884 1.83 1.155 2.097 1.285.267.13.423.111.583-.07.16-.183.69-1.32.906-1.748.215-.429.432-.34.674-.246.241.094 1.536.723 1.8.854.263.13.438.196.502.304.064.11.064.631-.18 1.316z"/>
+  </svg>
+</a>
+
+<!-- =========================================================
+     SCRIPTS
+     ========================================================= -->
+<script>
+  let ytPlayer;
+  window.onYouTubeIframeAPIReady = function() {
+    try {
+      ytPlayer = new YT.Player('vsl-iframe', {
+        events: {
+          'onStateChange': function() {
+            if (ytPlayer && typeof ytPlayer.isMuted === 'function' && !ytPlayer.isMuted()) {
+              const overlay = document.getElementById('vsl-unmute-overlay');
+              if (overlay) overlay.style.display = 'none';
             }
-          });
-          return finalUrl.toString();
-        } catch (e) {
-          const queryPairs = Object.keys(savedParams)
-            .filter((k) => savedParams[k])
-            .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(savedParams[k]));
-          if (!queryPairs.length) return baseUrl;
-          const sep = baseUrl.includes('?') ? '&' : '?';
-          return baseUrl + sep + queryPairs.join('&');
+          }
         }
-      };
-    })();
+      });
+    } catch(err) {}
+  };
 
-    // 2. Checkout Redirect Limpo (Sem disparar eventos de checkout na página + Trava de clique duplo + UTMs persistentes)
-    let isRedirecting = false;
+  function desmutarVideo() {
+    const iframe = document.getElementById('vsl-iframe');
+    const overlay = document.getElementById('vsl-unmute-overlay');
 
-    function goToCheckout() {
-      if (isRedirecting) return;
-      isRedirecting = true;
-
-      const targetUrl = OFFER_CONFIG.checkoutUrlMain;
-      const finalUrl = window.buildCheckoutUrlWithUtms
-        ? window.buildCheckoutUrlWithUtms(targetUrl)
-        : targetUrl;
-
-      window.location.href = finalUrl;
-
-      setTimeout(() => { isRedirecting = false; }, 3000);
+    if (iframe && iframe.contentWindow) {
+      try {
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'unMute' }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'seekTo', args: [0, true] }), '*');
+        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo' }), '*');
+      } catch(e) {}
     }
 
-    // 3. Dynamic Savings Calculator
-    const acSlider = document.getElementById('ac-slider');
-    const acCountLabel = document.getElementById('ac-count-label');
-    const techCostEl = document.getElementById('tech-cost');
-    const energySaveEl = document.getElementById('energy-save');
-    const totalSaveEl = document.getElementById('total-save');
+    if (ytPlayer && typeof ytPlayer.unMute === 'function') {
+      try {
+        ytPlayer.unMute();
+        ytPlayer.setVolume(100);
+        ytPlayer.seekTo(0);
+        ytPlayer.playVideo();
+      } catch(e) {}
+    }
 
-    acSlider.addEventListener('input', function() {
-      const count = parseInt(this.value, 10);
-      acCountLabel.textContent = count === 1 ? '1 aparelho' : `${count} aparelhos`;
+    if (overlay) {
+      overlay.classList.add('fade-out');
+      setTimeout(() => { overlay.style.display = 'none'; }, 350);
+    }
+  }
 
-      const annualTechCost = count * 500;
-      const annualEnergySave = count * 320;
-      const totalEconomy = (annualTechCost + annualEnergySave) - 37;
-
-      techCostEl.textContent = `R$ ${annualTechCost.toLocaleString('pt-BR')}`;
-      energySaveEl.textContent = `+ R$ ${annualEnergySave.toLocaleString('pt-BR')}/ano`;
-      totalSaveEl.textContent = `R$ ${totalEconomy.toLocaleString('pt-BR')}`;
+  // Tracking de clique no botão (sem duplicar o InitiateCheckout oficial da Cakto)
+  document.querySelectorAll('a[href*="cakto.com.br"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof fbq === 'function') {
+        fbq('trackCustom', 'CliqueCheckout', {
+          content_name: 'Protocolo Ar Gelado',
+          button_id: btn.id || 'cta-geral',
+          value: 37.00,
+          currency: 'BRL'
+        });
+      }
     });
+  });
 
-    // 4. FAQ Accordion
-    document.querySelectorAll('.faq-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const content = btn.nextElementSibling;
-        const icon = btn.querySelector('.faq-icon');
-        const isOpen = !content.classList.contains('hidden');
-
-        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
-        document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
-
-        if (!isOpen) {
-          content.classList.remove('hidden');
-          icon.textContent = '−';
-        }
-      });
+  // FAQ Accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+      btn.setAttribute('aria-expanded', !isOpen);
     });
+  });
 
-    // 5. Sticky Mobile Bar on Scroll (Aparece após o visitante ver o vídeo e os sintomas)
-    const stickyBar = document.getElementById('sticky-bar');
+  // Barra Sticky no Mobile após passar do botão principal do Hero
+  const stickyBar = document.getElementById('mobile-sticky-bar');
+  const heroCta = document.getElementById('cta-hero-wrapper');
+  if (stickyBar && heroCta) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 850) {
-        stickyBar.classList.remove('translate-y-full');
+      const rect = heroCta.getBoundingClientRect();
+      if (rect.bottom < 0) {
+        stickyBar.classList.add('visible');
       } else {
-        stickyBar.classList.add('translate-y-full');
+        stickyBar.classList.remove('visible');
       }
     }, { passive: true });
+  }
 
-    // 6. Força autoplay do vídeo demonstrativo no Safari e Chrome mobile
-    const demoVideo = document.getElementById('demo-video');
-    if (demoVideo) {
-      demoVideo.muted = true;
-      demoVideo.play().catch(() => {});
+  // Repasse silencioso de UTMs para o checkout da Cakto
+  document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.toString() !== "") {
+      document.querySelectorAll('a[href*="pay.cakto.com.br"]').forEach(function(link) {
+        try {
+          let urlCheckout = new URL(link.href);
+          for (const [key, value] of urlParams.entries()) {
+            if (!urlCheckout.searchParams.has(key)) {
+              urlCheckout.searchParams.append(key, value);
+            }
+          }
+          link.href = urlCheckout.toString();
+        } catch(e) {}
+      });
     }
-  </script>
+  });
+</script>
 </body>
 </html>

@@ -785,13 +785,13 @@
       Assista ao vídeo rápido abaixo e veja como higienizar a turbina e a serpentina sem molhar a parede e com <strong>proteção total da placa eletrônica</strong>.
     </p>
 
-    <!-- POCKET VSL – YouTube Vertical (9:16) -->
+    <!-- POCKET VSL – YouTube Shorts Vertical (ID: NgONtRz-kLM) -->
     <div class="vsl-wrapper">
       <div class="vsl-ratio">
         <iframe
           id="vsl-iframe"
-          src="https://www.youtube.com/embed/NgONtRz-kLM?autoplay=1&mute=1&loop=1&rel=0&modestbranding=1&playsinline=1&controls=1&iv_load_policy=3&playlist=SEU_ID_DO_YOUTUBE_AQUI&enablejsapi=1"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          src="https://www.youtube.com/embed/NgONtRz-kLM?autoplay=1&mute=1&loop=1&playlist=NgONtRz-kLM&rel=0&modestbranding=1&playsinline=1&controls=1&iv_load_policy=3&enablejsapi=1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
           title="Protocolo Ar Gelado – Vídeo Explicativo"
@@ -1179,6 +1179,18 @@
      SCRIPTS
      ========================================================= -->
 <script>
+  // URL oficial do Short configurada (ID extraído: NgONtRz-kLM)
+  const YOUTUBE_SHORTS_LINK = 'https://www.youtube.com/shorts/NgONtRz-kLM';
+
+  (function garantirVideoVSL() {
+    const match = YOUTUBE_SHORTS_LINK.trim().match(/(?:shorts\/|youtu\.be\/|v=|embed\/|^)([a-zA-Z0-9_-]{11})/);
+    const videoId = match ? match[1] : 'NgONtRz-kLM';
+    const iframe = document.getElementById('vsl-iframe');
+    if (iframe && !iframe.src.includes(videoId)) {
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&rel=0&modestbranding=1&playsinline=1&controls=1&iv_load_policy=3&enablejsapi=1`;
+    }
+  })();
+
   let ytPlayer;
   window.onYouTubeIframeAPIReady = function() {
     try {
